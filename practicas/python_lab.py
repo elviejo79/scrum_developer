@@ -219,7 +219,16 @@ def square_dict(n):
     >>> square_dict(10)
     {0: 0, 1: 1, 2: 4, 3: 9, 4: 16, 5: 25, 6: 36, 7: 49, 8: 64, 9: 81}
     """
-
+    i=0
+    cadena=""
+    dicc = {}
+    while i<n:
+        rep = i * i
+        # cadena = i,": ", rep
+        dicc[i]= rep
+        i = i + 1
+    return dicc
+    
 
 def dictionary_mapping(names, id2salaries):
     """
