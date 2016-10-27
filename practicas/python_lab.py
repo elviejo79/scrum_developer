@@ -15,7 +15,7 @@ def minutes_in_weeks(weeks):
     return weeks * 7 * 24 * 60
 
 
-def reminder_without_mod(numerator, divisor):
+def remainder_without_mod(numerator, divisor):
     """
     2: (Task 0.5.2) Remainder
     >>> remainder_without_mod(28,7)
@@ -24,6 +24,7 @@ def reminder_without_mod(numerator, divisor):
     2
     """
     return numerator - ((numerator // divisor) * divisor)
+
 
 def divisble_by_3(num):
     """
@@ -43,7 +44,7 @@ def predict_expresion(x, y, prediction):
     >>> predict_expression(-9, 1/2, 1)
     1
     """
-    return 2 ** (y + prediction) if x + 10 < 0 else 2**(y - prediction)
+    return 2 ** (y + prediction) if x + 10 < 0 else 2**(y-prediction)
 
 
 def squares_set(numbers):
@@ -77,7 +78,7 @@ def pows_two(numbers):
 def set_product57(xs, ys):
     """
     7: (Task 0.5.7) Double comprehension evaluating to nine-element set
-    Return a set containing the multiplication of every element 
+    Return a set containing the multiplication of every element
     in a set multiplied by the other
     >>> set_product57({1,2,3},{3,4,5})
     set([3, 4, 5, 6, 8, 9, 10, 12, 15])
@@ -92,14 +93,8 @@ def set_product57(xs, ys):
 def set_product58(xs, ys):
     """
     8: (Task 0.5.8) Double comprehension evaluating to five-element set
-<<<<<<< HEAD
-    Return a set containing the multiplicacion of every elment 
-    in a set multiplied by the other
-=======
     Return a set containing the multiplicacion of every elment in a set
-    multiplied by the other
->>>>>>> 2f6d404a0ad37e0672d6f91619a37fc1f5f722fd
-    where elements dont repeat
+    multiplied by the other where elements dont repeat
     >>> set_product58({1,2,3},{3,4,5})
     set([3, 4, 5, 6, 8, 10, 12, 15])
     """
@@ -128,20 +123,15 @@ def list_average(list_of_numbers):
     """
 
     return sum(list_of_numbers) / len(list_of_numbers)
-    
+
 
 def cartesian_product(Xs, Ys):
     """
     11: (Task 0.5.11) Cartesian-product comprehension
     a double list comprehension over {'A','B','C'} and {1,2,3}
     >>> cartesian_product(['A','B','C'],[1,2,3])
-<<<<<<< HEAD
-    [['A', 1], ['A', 2], ['A', 3], ['B', 1], ['B', 2],['B', 3],['C', 1], 
-    ['C', 2], ['C', 3]]
-=======
     [['A', 1], ['A', 2], ['A', 3], ['B', 1], ['B', 2], ['B', 3], \
 ['C', 1], ['C', 2], ['C', 3]]
->>>>>>> 2f6d404a0ad37e0672d6f91619a37fc1f5f722fd
     """
     my_list = list()
     for x in Xs:
@@ -159,8 +149,8 @@ def LofL_sum(list_of_lists):
 
     >>> LofL_sum([[.25, .75, .1], [-1, 0], [4, 4, 4, 4]])
     16.1
-
     """
+    return sum([sum(li) for li in list_of_lists])
 
 
 def zero_sum_list(list_of_numbers):
@@ -179,10 +169,8 @@ def non_zero_sum_list(list_of_numbers):
     the resulting list does
     not include (0, 0, 0). Hint: add a filter.
     >>> non_zero_sum_list([-4, -2, 1, 2, 5, 0])
-    [(-4, 2, 2), (-2, 1, 1), (-2, 2, 0), (-2, 0, 2), (1, -2, 1), (1, 1, -2), 
-    (2, -4, 2), (2, -2, 0), (2, 2, -4), (2, 0, -2), (0, -2, 2), (0, 2, -2)]
+    [(-4, 2, 2), (-2, 1, 1), (-2, 2, 0), (-2, 0, 2), (1, -2, 1), (1, 1, -2), (2, -4, 2), (2, -2, 0), (2, 2, -4), (2, 0, -2), (0, -2, 2), (0, 2, -2)]
     """
-
     return [(x, y, z) for x in list_of_numbers for y in list_of_numbers for z in list_of_numbers if x + y + z == 0 and not (x == 0 and y == 0 and z == 0)]
 
 
@@ -197,13 +185,8 @@ def first_zero_sum_list(list_of_numbers):
 
 def is_element_repeated(things):
     """
-<<<<<<< HEAD
-    17: Task 0.5.17: Find an example of a list L such that len(L) 
-    and len(list(set(L))) are diferent."
-=======
     17: Task 0.5.17: Find an example of a list L such that len(L) and
     len(list(set(L))) are diferent."
->>>>>>> c1e29f4e93ecf15170872e8f85f72cfc5c2e95e9
     >>> is_element_repeated([1,1,2,3])
     True
     >>> is_element_repeated([1,2,3,4])
@@ -229,12 +212,7 @@ def range_and_zip(letters):
     [(0, 'A'), (1, 'B'), (2, 'C'), (3, 'D'), (4, 'E')]
     Do not use a list comprehension use range and zip
     """
-    i = 0
-    _list = []
-    for ch in letters:
-        _list.append((i, ch))
-        i = i + 1
-    return _list
+    return zip(range(len(letters)), letters)
 
 
 def list_sum_zip(A, B):
@@ -254,9 +232,7 @@ def value_list(k, dlist):
     """
     (Task 0.5.21) Extracting the value corresponding to key k 
     from each dictionary in a list
-    >>> value_list('James',[{'James':'Sean', 'director':'Terence'}, 
-    {'James':'Roger', 'director':'Lewis'}, 
-    {'James':'Pierce', 'director':'Roger'}])
+    >>> value_list('James',[{'James':'Sean', 'director':'Terence'}, {'James':'Roger', 'director':'Lewis'}, {'James':'Pierce', 'director':'Roger'}])
     ['Sean', 'Roger', 'Pierce']
     """
     return [i[k] for i in dlist]
@@ -265,16 +241,14 @@ def value_list(k, dlist):
 def value_list_m(k, dlist):
     """
     Task 0.5.22: Modify the comprehension in Task 0.5.21 to handle the case
-                 in which k might not appear in all the dictionaries.
-                 The comprehension evaluates to the list whose ith element is
-                 the value corresponding to key k in the i
+    in which k might not appear in all the dictionaries.
+    The comprehension evaluates to the list whose ith element is
+    the value corresponding to key k in the i
     th dictionary in dlist if that dictionary
     contains that key, and 'NOT PRESENT' otherwise.
-    >>> value_list_m('Bilbo',[{'Bilbo':'Ian','Frodo':'Elijah'},
-    {'Bilbo':'Martin','Thorin':'Rich'}])
+    >>> value_list_m('Bilbo',[{'Bilbo':'Ian','Frodo':'Elijah'}, {'Bilbo':'Martin','Thorin':'Rich'}])
     ['Ian', 'Martin']
-    >>> value_list_m('Frodo',[{'Bilbo':'Ian','Frodo':'Elijah'},
-    {'Bilbo':'Martin','Thorin':'Rich'}])
+    >>> value_list_m('Frodo',[{'Bilbo':'Ian','Frodo':'Elijah'}, {'Bilbo':'Martin','Thorin':'Rich'}])
     ['Elijah', 'NOT PRESENT']
     """
     l = []
@@ -357,8 +331,8 @@ def list2dict(L, keylist):
       input: list L, list keylist of immutable items
       output: dictionary that maps keylist[i] to L[i]
               for i = 0, 1, 2,..., len(L) % 1
-    >>> list2dict([’A’,’B’,’C’],keylist=[’a’,’b’,’c’])
-    {'a':'A', 'b':'B', 'c':'C'}
+    >>> list2dict(['A','B','C'],keylist=['a','b','c'])
+    {'a': 'A', 'c': 'C', 'b': 'B'}
     """
     empty_dict = {}
     i = 0
