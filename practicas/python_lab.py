@@ -53,6 +53,11 @@ def squares_set(numbers):
     >>> squares_set({1,2,3,4,5,5,5})
     set([16, 1, 4, 25, 9])
     """
+    lista = set()
+    for n in numbers:
+        num = n ** 2
+        lista.add(num)
+    return(lista)
 
 
 def pows_two(numbers):
@@ -67,7 +72,8 @@ def pows_two(numbers):
 def set_product57(xs, ys):
     """
     7: (Task 0.5.7) Double comprehension evaluating to nine-element set
-    Return a set containing the multiplication of every element in a set multiplied by the other
+    Return a set containing the multiplication of every element 
+    in a set multiplied by the other
     >>> set_product57({1,2,3},{3,4,5})
     set([3, 4, 5, 6, 8, 9, 10, 12, 15])
     """
@@ -76,7 +82,8 @@ def set_product57(xs, ys):
 def set_product58(xs, ys):
     """
     8: (Task 0.5.8) Double comprehension evaluating to five-element set
-    Return a set containing the multiplicacion of every elment in a set multiplied by the other
+    Return a set containing the multiplicacion of every elment 
+    in a set multiplied by the other
     where elements dont repeat
     >>> set_product58({1,2,3},{3,4,5})
     set([3, 4, 5, 6, 8, 10, 12, 15])
@@ -108,7 +115,8 @@ def cartesian_product(Xs, Ys):
     11: (Task 0.5.11) Cartesian-product comprehension
     a double list comprehension over {'A','B','C'} and {1,2,3}
     >>> cartesian_product(['A','B','C'],[1,2,3])
-    [['A', 1], ['A', 2], ['A', 3], ['B', 1], ['B', 2],['B', 3],['C', 1], ['C', 2], ['C', 3]]
+    [['A', 1], ['A', 2], ['A', 3], ['B', 1], ['B', 2],['B', 3],['C', 1], 
+    ['C', 2], ['C', 3]]
     """
 
 
@@ -116,7 +124,8 @@ def LofL_sum(list_of_lists):
     """
     12: (Task 0.5.12) Sum of numbers in list of list of numbers
     a one-line expression of the form sum([sum(...) ... ]) that
-    includes a comprehension and evaluates to the sum of all numbers in all the lists.
+    includes a comprehension and evaluates to the sum of all numbers in all 
+    the lists.
 
     >>> LofL_sum([[.25, .75, .1], [-1, 0], [4, 4, 4, 4]])
     16.1
@@ -128,16 +137,20 @@ def zero_sum_list(list_of_numbers):
     """
     13: (Task 0.5.14) Three-element tuples summing to zero
     >>> zero_sum_list([-4, -2, 1, 2, 5, 0])
-    [(-4, 2, 2), (-2, 1, 1), (-2, 2, 0), (-2, 0, 2), (1, -2, 1), (1, 1, -2), (2, -4, 2), (2, -2, 0), (2, 2, -4), (2, 0, -2), (0, -2, 2), (0, 2, -2), (0, 0, 0)]
+    [(-4, 2, 2), (-2, 1, 1), (-2, 2, 0), (-2, 0, 2), (1, -2, 1), (1, 1, -2), 
+    (2, -4, 2), (2, -2, 0), (2, 2, -4), (2, 0, -2), (0, -2, 2), (0, 2, -2), 
+    (0, 0, 0)]
     """
 
 
 def non_zero_sum_list(list_of_numbers):
     """
-    Task 0.5.15: Modify the comprehension of the previous task so that the resulting list does
+    Task 0.5.15: Modify the comprehension of the previous task so that 
+    the resulting list does
     not include (0, 0, 0). Hint: add a filter.
     >>> non_zero_sum_list([-4, -2, 1, 2, 5, 0])
-    [(-4, 2, 2), (-2, 1, 1), (-2, 2, 0), (-2, 0, 2), (1, -2, 1), (1, 1, -2), (2, -4, 2), (2, -2, 0), (2, 2, -4), (2, 0, -2), (0, -2, 2), (0, 2, -2)]
+    [(-4, 2, 2), (-2, 1, 1), (-2, 2, 0), (-2, 0, 2), (1, -2, 1), (1, 1, -2), 
+    (2, -4, 2), (2, -2, 0), (2, 2, -4), (2, 0, -2), (0, -2, 2), (0, 2, -2)]
     """
 
 
@@ -151,7 +164,8 @@ def first_zero_sum_list(list_of_numbers):
 
 def is_element_repeated(things):
     """
-    17: Task 0.5.17: Find an example of a list L such that len(L) and len(list(set(L))) are diferent."
+    17: Task 0.5.17: Find an example of a list L such that len(L) 
+    and len(list(set(L))) are diferent."
     >>> is_element_repeated([1,1,2,3])
     True
     >>> is_element_repeated([1,2,3,4])
@@ -182,7 +196,8 @@ def list_sum_zip(A, B):
     """
     (Task 0.5.20) Using zip to find elementwise sums
     A one-line comprehension that uses zip together with the variables A and B.
-    The comprehension should evaluate to a list whose ith element is the ith element of
+    The comprehension should evaluate to a list whose ith element is the ith 
+    element of
     A plus the ith element of B.
     >>> list_sum_zip([10,20,30],[1,2,3])
     [11, 22, 33]
@@ -191,8 +206,11 @@ def list_sum_zip(A, B):
 
 def value_list(k, dlist):
     """
-    (Task 0.5.21) Extracting the value corresponding to key k from each dictionary in a list
-    >>> value_list('James',[{'James':'Sean', 'director':'Terence'}, {'James':'Roger', 'director':'Lewis'}, {'James':'Pierce', 'director':'Roger'}])
+    (Task 0.5.21) Extracting the value corresponding to key k 
+    from each dictionary in a list
+    >>> value_list('James',[{'James':'Sean', 'director':'Terence'}, 
+    {'James':'Roger', 'director':'Lewis'}, 
+    {'James':'Pierce', 'director':'Roger'}])
     ['Sean', 'Roger', 'Pierce']
     """
 
@@ -205,9 +223,11 @@ def value_list_m(k, dlist):
                  the value corresponding to key k in the i
     th dictionary in dlist if that dictionary
     contains that key, and 'NOT PRESENT' otherwise.
-    >>> value_list_m('Bilbo',[{'Bilbo':'Ian','Frodo':'Elijah'},{'Bilbo':'Martin','Thorin':'Rich'}])
+    >>> value_list_m('Bilbo',[{'Bilbo':'Ian','Frodo':'Elijah'},
+    {'Bilbo':'Martin','Thorin':'Rich'}])
     ['Ian', 'Martin']
-    >>> value_list_m('Frodo',[{'Bilbo':'Ian','Frodo':'Elijah'},{'Bilbo':'Martin','Thorin':'Rich'}])
+    >>> value_list_m('Frodo',[{'Bilbo':'Ian','Frodo':'Elijah'},
+    {'Bilbo':'Martin','Thorin':'Rich'}])
     ['Elijah', 'NOT PRESENT']
     """
 
