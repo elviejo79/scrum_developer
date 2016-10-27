@@ -233,9 +233,7 @@ def value_list(k, dlist):
     """
     (Task 0.5.21) Extracting the value corresponding to key k 
     from each dictionary in a list
-    >>> value_list('James',[{'James':'Sean', 'director':'Terence'}, 
-    {'James':'Roger', 'director':'Lewis'}, 
-    {'James':'Pierce', 'director':'Roger'}])
+    >>> value_list('James',[{'James':'Sean', 'director':'Terence'}, {'James':'Roger', 'director':'Lewis'}, {'James':'Pierce', 'director':'Roger'}])
     ['Sean', 'Roger', 'Pierce']
     """
     return [i[k] for i in dlist]
@@ -244,16 +242,14 @@ def value_list(k, dlist):
 def value_list_m(k, dlist):
     """
     Task 0.5.22: Modify the comprehension in Task 0.5.21 to handle the case
-                 in which k might not appear in all the dictionaries.
-                 The comprehension evaluates to the list whose ith element is
-                 the value corresponding to key k in the i
+    in which k might not appear in all the dictionaries.
+    The comprehension evaluates to the list whose ith element is
+    the value corresponding to key k in the i
     th dictionary in dlist if that dictionary
     contains that key, and 'NOT PRESENT' otherwise.
-    >>> value_list_m('Bilbo',[{'Bilbo':'Ian','Frodo':'Elijah'},
-    {'Bilbo':'Martin','Thorin':'Rich'}])
+    >>> value_list_m('Bilbo',[{'Bilbo':'Ian','Frodo':'Elijah'}, {'Bilbo':'Martin','Thorin':'Rich'}])
     ['Ian', 'Martin']
-    >>> value_list_m('Frodo',[{'Bilbo':'Ian','Frodo':'Elijah'},
-    {'Bilbo':'Martin','Thorin':'Rich'}])
+    >>> value_list_m('Frodo',[{'Bilbo':'Ian','Frodo':'Elijah'}, {'Bilbo':'Martin','Thorin':'Rich'}])
     ['Elijah', 'NOT PRESENT']
     """
     l = []
