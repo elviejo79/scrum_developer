@@ -255,7 +255,7 @@ def dictionary_mapping(names, id2salaries):
     >>> dictionary_mapping(['Larry', 'Curly', 'Moe'],{0:100.0, 1:120.50, 2:99})
     {'Larry': 100.0, 'Moe': 99, 'Curly': 120.5}
     """
-
+    return (dict(zip(names, id2salaries.values())))
 
 def nextInts(L):
     """
