@@ -40,14 +40,14 @@ def divisible_by_3(num):
     return True if num % 3 == 0 else False
 
 
-def predict_expresion(x, y, prediction):
+def predict_expression(x, y, prediction):
     """
     4: (Task 0.5.4) Conditional Expression
     Try to predict the value of 2**(y+1/2) if x+10<0 else 2**(y-1/2)
     >>> predict_expression(-9, 1/2, 1)
     1
     """
-    return 2 ** (y + prediction) if x + 10 < 0 else 2**(y-prediction)
+    return 2**(y+1/2) if x+10<0 else 2**(y-1/2)
 
 
 def squares_set(numbers):
