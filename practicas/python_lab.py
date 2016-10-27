@@ -109,13 +109,15 @@ def list_average(list_of_numbers):
     """
     10: (Task 0.5.10) Average
     A one-line expression that evaluates to the average of list_of_numbers.
-    Your expression should refer to the variable list_of_numbers, and should work
-    for a list of any length greater than zero.
+    Your expression should refer to the variable list_of_numbers, and should
+    work for a list of any length greater than zero.
 
     >>> list_average([20, 10, 15, 75])
     30
     """
 
+    return sum(list_of_numbers) / len(list_of_numbers)
+    
 
 def cartesian_product(Xs, Ys):
     """
