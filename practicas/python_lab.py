@@ -14,7 +14,7 @@ def minutes_in_weeks(weeks):
     """
     return weeks * 7 * 24 * 60
 
-def reminder_without_mod(numerator, divisor):
+def remander_without_mod(numerator, divisor):
     """
     2: (Task 0.5.2) Remainder
     >>> remainder_without_mod(28,7)
