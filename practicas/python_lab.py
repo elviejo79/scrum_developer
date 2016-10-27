@@ -266,6 +266,7 @@ def dictionary_mapping(names, id2salaries):
     """
     return (dict(zip(names, id2salaries.values())))
 
+
 def nextInts(L):
     """
     Task 0.5.28: Define a one-line procedure nextInts(L) specified as follows:
