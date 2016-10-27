@@ -37,7 +37,6 @@ def divisble_by_3(num):
     return "True" if num % 3 == 0 else "False"
 
 
-
 def predict_expresion(x, y, prediction):
     """
     4: (Task 0.5.4) Conditional Expression
@@ -160,12 +159,14 @@ def first_zero_sum_list(list_of_numbers):
 
 def is_element_repeated(things):
     """
-    17: Task 0.5.17: Find an example of a list L such that len(L) and len(list(set(L))) are diferent."
+    17: Task 0.5.17: Find an example of a list L such that len(L) and
+    len(list(set(L))) are diferent."
     >>> is_element_repeated([1,1,2,3])
     True
     >>> is_element_repeated([1,2,3,4])
     False
     """
+    return bool(len(things) != len(set(things)))
 
 
 def odd_num_list(n):
