@@ -12,7 +12,7 @@ def minutes_in_weeks(weeks):
     >>> minutes_in_weeks(2)
     20160
     """
-    return weeks*7*24*60
+    return weeks * 7 * 24 * 60
 
 
 def reminder_without_mod(numerator, divisor):
@@ -60,8 +60,13 @@ def pows_two(numbers):
     6: (Task 0.5.6) Powers-of-2 Set Comprehension
     Given a set of numbers return the powers of two of those numbers
     >>> pows_two({0,1,2,3,4})
-    set([8, 1, 2, 4, 16])
+    set([0, 1, 4, 9, 16])
     """
+    lista = set()
+    for n in numbers:
+        num = n**2
+        lista.add(num)
+    return lista
 
 
 def set_product57(xs, ys):
@@ -71,11 +76,12 @@ def set_product57(xs, ys):
     >>> set_product57({1,2,3},{3,4,5})
     set([3, 4, 5, 6, 8, 9, 10, 12, 15])
     """
-    resultado  = set()
+    resultado = set()
     for i in xs:
         for j in ys:
-            resultado.add(i*j)
+            resultado.add(i * j)
     return resultado
+
 
 def set_product58(xs, ys):
     """
@@ -153,7 +159,7 @@ def non_zero_sum_list(list_of_numbers):
     >>> non_zero_sum_list([-4, -2, 1, 2, 5, 0])
     [(-4, 2, 2), (-2, 1, 1), (-2, 2, 0), (-2, 0, 2), (1, -2, 1), (1, 1, -2), (2, -4, 2), (2, -2, 0), (2, 2, -4), (2, 0, -2), (0, -2, 2), (0, 2, -2)]
     """
-    
+
     return [(x, y, z) for x in list_of_numbers for y in list_of_numbers for z in list_of_numbers if x + y + z == 0 and not (x == 0 and y == 0 and z == 0)]
 
 
@@ -164,6 +170,7 @@ def first_zero_sum_list(list_of_numbers):
     [(-4, 2, 2)]
     """
     return [[(x, y, z) for x in list_of_numbers for y in list_of_numbers for z in list_of_numbers if x + y + z == 0 and x != 0 and y != 0][0]]
+
 
 def is_element_repeated(things):
     """
@@ -195,7 +202,7 @@ def range_and_zip(letters):
 
     Do not use a list comprehension use range and zip
     """
-    
+
 
 def list_sum_zip(A, B):
     """
@@ -206,7 +213,7 @@ def list_sum_zip(A, B):
     >>> list_sum_zip([10,20,30],[1,2,3])
     [11, 22, 33]
     """
-    return [sum(x) for x in zip(A,B)]
+    return [sum(x) for x in zip(A, B)]
 
 
 def value_list(k, dlist):
@@ -216,8 +223,8 @@ def value_list(k, dlist):
     ['Sean', 'Roger', 'Pierce']
     """
     return [i[k] for i in dlist]
-    
-    
+
+
 def value_list_m(k, dlist):
     """
     Task 0.5.22: Modify the comprehension in Task 0.5.21 to handle the case
@@ -310,4 +317,3 @@ def list2dict(L, keylist):
         empty_dict[keylist[i]] = L[i]
         i = i + 1
     return empty_dict
-    
