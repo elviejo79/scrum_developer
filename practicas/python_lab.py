@@ -96,9 +96,8 @@ def set_product58(xs, ys):
     Return a set containing the multiplicacion of every elment in a set
     multiplied by the other where elements dont repeat
     >>> set_product58({1,2,3},{3,4,5})
-    set([3, 4, 5, 6, 8, 10, 12, 15])
+    set([3, 4, 5, 6, 8, 9, 10, 12, 15])
     """
-
     return {x * y for x in xs for y in ys}
 
 
@@ -160,10 +159,10 @@ def zero_sum_list(list_of_numbers):
     """
     13: (Task 0.5.14) Three-element tuples summing to zero
     >>> zero_sum_list([-4, -2, 1, 2, 5, 0])
-    [(-4, 2, 2), (-2, 1, 1), (-2, 2, 0), (-2, 0, 2), (1, -2, 1), (1, 1, -2), 
-    (2, -4, 2), (2, -2, 0), (2, 2, -4), (2, 0, -2), (0, -2, 2), (0, 2, -2), 
-    (0, 0, 0)]
+    [(-4, 2, 2), (-2, 1, 1), (-2, 2, 0), (-2, 0, 2), (1, -2, 1), (1, 1, -2), (2, -4, 2), (2, -2, 0), (2, 2, -4), (2, 0, -2), (0, -2, 2), (0, 2, -2), (0, 0, 0)]
     """
+    return [(i,j,k) for i in list_of_numbers for j in list_of_numbers for k in list_of_numbers if i+j+k==0]
+    
 
 
 def non_zero_sum_list(list_of_numbers):
