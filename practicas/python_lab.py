@@ -14,7 +14,6 @@ def minutes_in_weeks(weeks):
     """
     return weeks * 7 * 24 * 60
 
-
 def reminder_without_mod(numerator, divisor):
     """
     2: (Task 0.5.2) Remainder
@@ -24,6 +23,7 @@ def reminder_without_mod(numerator, divisor):
     2
     """
     return numerator - ((numerator // divisor) * divisor)
+
 
 def divisble_by_3(num):
     """
@@ -122,7 +122,7 @@ def list_average(list_of_numbers):
     """
 
     return sum(list_of_numbers) / len(list_of_numbers)
-    
+
 
 def cartesian_product(Xs, Ys):
     """
@@ -213,13 +213,8 @@ def range_and_zip(letters):
     [(0, 'A'), (1, 'B'), (2, 'C'), (3, 'D'), (4, 'E')]
     Do not use a list comprehension use range and zip
     """
-    i = 0
-    _list = []
-    for ch in letters:
-        _list.append((i, ch))
-        i = i + 1
-    return _list
-
+    return zip(range(len(letters)), letters)
+    
 
 def list_sum_zip(A, B):
     """
@@ -277,7 +272,16 @@ def square_dict(n):
     >>> square_dict(10)
     {0: 0, 1: 1, 2: 4, 3: 9, 4: 16, 5: 25, 6: 36, 7: 49, 8: 64, 9: 81}
     """
-
+    i=0
+    cadena=""
+    dicc = {}
+    while i<n:
+        rep = i * i
+        # cadena = i,": ", rep
+        dicc[i]= rep
+        i = i + 1
+    return dicc
+    
 
 def dictionary_mapping(names, id2salaries):
     """
