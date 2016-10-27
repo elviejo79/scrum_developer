@@ -13,7 +13,7 @@ def minutes_in_weeks(weeks):
     >>> minutes_in_weeks(2)
     20160
     """
-    return weeks * 7 * 24 * 60
+    return weeks*7*24*60
 
 
 def reminder_without_mod(numerator, divisor):
@@ -24,7 +24,6 @@ def reminder_without_mod(numerator, divisor):
     >>> remainder_without_mod(30,7)
     2
     """
-    return numerator - ((numerator // divisor) * divisor)
 
 
 def divisble_by_3(num):
@@ -276,4 +275,10 @@ def list2dict(L, keylist):
     >>> list2dict([’A’,’B’,’C’],keylist=[’a’,’b’,’c’])
     {'a':'A', 'b':'B', 'c':'C'}
     """
-    return {}
+    empty_dict = {}
+    i = 0
+    while i < len(keylist):
+        empty_dict[keylist[i]] = L[i]
+        i = i + 1
+    return empty_dict
+    
