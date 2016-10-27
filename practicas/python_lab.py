@@ -182,6 +182,7 @@ def range_and_zip(letters):
         i=i+1
     return _list
 
+
 def list_sum_zip(A, B):
     """
     (Task 0.5.20) Using zip to find elementwise sums
