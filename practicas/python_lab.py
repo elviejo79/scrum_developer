@@ -73,7 +73,11 @@ def set_product57(xs, ys):
     >>> set_product57({1,2,3},{3,4,5})
     set([3, 4, 5, 6, 8, 9, 10, 12, 15])
     """
-
+    resultado  = set()
+    for i in xs:
+        for j in ys:
+            resultado.add(i*j)
+    return resultado
 
 def set_product58(xs, ys):
     """
