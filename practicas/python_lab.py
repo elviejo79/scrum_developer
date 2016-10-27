@@ -34,6 +34,7 @@ def divisble_by_3(num):
     >>> divisibre_by_3(7)
     False
     """
+    return "True" if num  % 3 == 0 else "False"
 
 
 def predict_expresion(x, y, prediction):
@@ -43,6 +44,7 @@ def predict_expresion(x, y, prediction):
     >>> predict_expression(-9, 1/2, 1)
     1
     """
+    return 2 ** (y + prediction) if x + 10 < 0 else 2**(y - prediction)
 
 
 def squares_set(numbers):
@@ -70,7 +72,11 @@ def set_product57(xs, ys):
     >>> set_product57({1,2,3},{3,4,5})
     set([3, 4, 5, 6, 8, 9, 10, 12, 15])
     """
-
+    resultado  = set()
+    for i in xs:
+        for j in ys:
+            resultado.add(i*j)
+    return resultado
 
 def set_product58(xs, ys):
     """
@@ -88,6 +94,7 @@ def intersection(Ss, Ts):
     >>> intersection({1, 2, 3, 4},{3, 4, 5, 6})
     set([3, 4])
     """
+    return {x for x in Ss for y in Ts if x == y}
 
 
 def list_average(list_of_numbers):
@@ -138,6 +145,8 @@ def non_zero_sum_list(list_of_numbers):
     >>> non_zero_sum_list([-4, -2, 1, 2, 5, 0])
     [(-4, 2, 2), (-2, 1, 1), (-2, 2, 0), (-2, 0, 2), (1, -2, 1), (1, 1, -2), (2, -4, 2), (2, -2, 0), (2, 2, -4), (2, 0, -2), (0, -2, 2), (0, 2, -2)]
     """
+    
+    return [(x, y, z) for x in list_of_numbers for y in list_of_numbers for z in list_of_numbers if x + y + z == 0 and not (x == 0 and y == 0 and z == 0)]
 
 
 def first_zero_sum_list(list_of_numbers):
@@ -146,7 +155,7 @@ def first_zero_sum_list(list_of_numbers):
     >>> first_zero_sum_list([-4, -2, 1, 2, 5, 0])
     [(-4, 2, 2)]
     """
-
+    return [[(x, y, z) for x in list_of_numbers for y in list_of_numbers for z in list_of_numbers if x + y + z == 0 and x != 0 and y != 0][0]]
 
 def is_element_repeated(things):
     """
@@ -165,6 +174,7 @@ def odd_num_list(n):
     >>> odd_num_list(17)
     [1, 3, 5, 7, 9, 11, 13, 15]
     """
+    return [i for i in range(n) if i % 2 != 0]
 
 
 def range_and_zip(letters):
@@ -175,7 +185,7 @@ def range_and_zip(letters):
 
     Do not use a list comprehension use range and zip
     """
-
+    
 
 def list_sum_zip(A, B):
     """
@@ -237,7 +247,7 @@ def nextInts(L):
     >>> nextInts([1, 5, 7])
     [2, 6, 8]
     """
-    return []
+    return [x + 1 for x in L]
 
 
 def cubes(L):
