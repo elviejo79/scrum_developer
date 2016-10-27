@@ -2,10 +2,13 @@
 """ Repaso interactivo de python
     Traducido de: http://grading.codingthematrix.com/edition1/index.html
 """
+from itertools import combinations
+from collections import Iterable
 
 
 def minutes_in_weeks(weeks):
-    """ 1: (Task 0.5.1) Minutes in a Week
+    """ 
+    1: (Task 0.5.1) Minutes in a Week
     >>> minutes_in_weeks(1)
     10080
 
@@ -66,13 +69,11 @@ def pows_two(numbers):
     6: (Task 0.5.6) Powers-of-2 Set Comprehension
     Given a set of numbers return the powers of two of those numbers
     >>> pows_two({0,1,2,3,4})
-    set([0, 1, 4, 9, 16])
+    set([0, 1, 4, 16, 9])
     """
-    lista = set()
-    for n in numbers:
-        num = n**2
-        lista.add(num)
-    return lista
+    listaAux = [i * i for i in numbers]
+    print listaAux
+    return set(listaAux)
 
 
 def set_product57(xs, ys):
@@ -94,7 +95,8 @@ def set_product58(xs, ys):
     """
     8: (Task 0.5.8) Double comprehension evaluating to five-element set
     Return a set containing the multiplicacion of every elment in a set
-    multiplied by the other where elements dont repeat
+    multiplied by the other
+    where elements dont repeat
     >>> set_product58({1,2,3},{3,4,5})
     set([3, 4, 5, 6, 8, 9, 10, 12, 15])
     """
