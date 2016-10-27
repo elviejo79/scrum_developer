@@ -205,11 +205,21 @@ def value_list_m(k, dlist):
                  the value corresponding to key k in the i
     th dictionary in dlist if that dictionary
     contains that key, and 'NOT PRESENT' otherwise.
-    >>> value_list_m('Bilbo',[{'Bilbo':'Ian','Frodo':'Elijah'},{'Bilbo':'Martin','Thorin':'Rich'}])
+    >>> value_list_m('Bilbo',[{'Bilbo':'Ian','Frodo':'Elijah'},{'Bilbo':/
+'Martin','Thorin':'Rich'}])
     ['Ian', 'Martin']
-    >>> value_list_m('Frodo',[{'Bilbo':'Ian','Frodo':'Elijah'},{'Bilbo':'Martin','Thorin':'Rich'}])
+    
+    >>> value_list_m('Frodo',[{'Bilbo':'Ian','Frodo':'Elijah'},{'Bilbo':/
+'Martin','Thorin':'Rich'}])
     ['Elijah', 'NOT PRESENT']
     """
+    l = []
+    for data in dlist:
+        if k in data:
+            l.append(data[k])
+        else:
+            l.append("NOT PRESENT")
+    return l
 
 
 def square_dict(n):
