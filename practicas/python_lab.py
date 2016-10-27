@@ -29,12 +29,12 @@ def remainder_without_mod(numerator, divisor):
 def divisble_by_3(num):
     """
     3: (Task 0.5.3) Divisibility
-    >>> divisible_by_3(9)
+    >>> divisble_by_3(9)
     True
-    >>> divisibre_by_3(7)
+    >>> divisble_by_3(7)
     False
     """
-    return "True" if num % 3 == 0 else "False"
+    return  bool(num % 3 == 0)
 
 
 def predict_expresion(x, y, prediction):
@@ -322,7 +322,11 @@ def dict2list(dct, keylist):
     >>> dict2list({'a':'A', 'b':'B', 'c':'C'},['b','c','a'])
     ['B', 'C', 'A']
     """
-    return []
+    l = []
+    for key, value in dct.items():
+        if key in keylist:
+            l.append(value)
+    return l
 
 
 def list2dict(L, keylist):
