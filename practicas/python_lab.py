@@ -6,7 +6,6 @@
 
 def minutes_in_weeks(weeks):
     """ 1: (Task 0.5.1) Minutes in a Week
-
     >>> minutes_in_weeks(1)
     10080
 
@@ -234,6 +233,13 @@ def value_list_m(k, dlist):
     >>> value_list_m('Frodo',[{'Bilbo':'Ian','Frodo':'Elijah'},{'Bilbo':'Martin','Thorin':'Rich'}])
     ['Elijah', 'NOT PRESENT']
     """
+    l = []
+    for data in dlist:
+        if k in data:
+            l.append(data[k])
+        else:
+            l.append("NOT PRESENT")
+    return l
 
 
 def square_dict(n):
@@ -251,7 +257,7 @@ def dictionary_mapping(names, id2salaries):
     >>> dictionary_mapping(['Larry', 'Curly', 'Moe'],{0:100.0, 1:120.50, 2:99})
     {'Larry': 100.0, 'Moe': 99, 'Curly': 120.5}
     """
-
+    return (dict(zip(names, id2salaries.values())))
 
 def nextInts(L):
     """
