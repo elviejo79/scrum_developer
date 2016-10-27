@@ -92,14 +92,8 @@ def set_product57(xs, ys):
 def set_product58(xs, ys):
     """
     8: (Task 0.5.8) Double comprehension evaluating to five-element set
-<<<<<<< HEAD
-    Return a set containing the multiplicacion of every elment 
-    in a set multiplied by the other
-=======
     Return a set containing the multiplicacion of every elment in a set
-    multiplied by the other
->>>>>>> 2f6d404a0ad37e0672d6f91619a37fc1f5f722fd
-    where elements dont repeat
+    multiplied by the other where elements dont repeat
     >>> set_product58({1,2,3},{3,4,5})
     set([3, 4, 5, 6, 8, 10, 12, 15])
     """
@@ -135,13 +129,8 @@ def cartesian_product(Xs, Ys):
     11: (Task 0.5.11) Cartesian-product comprehension
     a double list comprehension over {'A','B','C'} and {1,2,3}
     >>> cartesian_product(['A','B','C'],[1,2,3])
-<<<<<<< HEAD
-    [['A', 1], ['A', 2], ['A', 3], ['B', 1], ['B', 2],['B', 3],['C', 1], 
-    ['C', 2], ['C', 3]]
-=======
     [['A', 1], ['A', 2], ['A', 3], ['B', 1], ['B', 2], ['B', 3], \
 ['C', 1], ['C', 2], ['C', 3]]
->>>>>>> 2f6d404a0ad37e0672d6f91619a37fc1f5f722fd
     """
     my_list = list()
     for x in Xs:
@@ -243,9 +232,7 @@ def value_list(k, dlist):
     """
     (Task 0.5.21) Extracting the value corresponding to key k 
     from each dictionary in a list
-    >>> value_list('James',[{'James':'Sean', 'director':'Terence'}, 
-    {'James':'Roger', 'director':'Lewis'}, 
-    {'James':'Pierce', 'director':'Roger'}])
+    >>> value_list('James',[{'James':'Sean', 'director':'Terence'}, {'James':'Roger', 'director':'Lewis'}, {'James':'Pierce', 'director':'Roger'}])
     ['Sean', 'Roger', 'Pierce']
     """
     return [i[k] for i in dlist]
@@ -254,16 +241,14 @@ def value_list(k, dlist):
 def value_list_m(k, dlist):
     """
     Task 0.5.22: Modify the comprehension in Task 0.5.21 to handle the case
-                 in which k might not appear in all the dictionaries.
-                 The comprehension evaluates to the list whose ith element is
-                 the value corresponding to key k in the i
+    in which k might not appear in all the dictionaries.
+    The comprehension evaluates to the list whose ith element is
+    the value corresponding to key k in the i
     th dictionary in dlist if that dictionary
     contains that key, and 'NOT PRESENT' otherwise.
-    >>> value_list_m('Bilbo',[{'Bilbo':'Ian','Frodo':'Elijah'},
-    {'Bilbo':'Martin','Thorin':'Rich'}])
+    >>> value_list_m('Bilbo',[{'Bilbo':'Ian','Frodo':'Elijah'}, {'Bilbo':'Martin','Thorin':'Rich'}])
     ['Ian', 'Martin']
-    >>> value_list_m('Frodo',[{'Bilbo':'Ian','Frodo':'Elijah'},
-    {'Bilbo':'Martin','Thorin':'Rich'}])
+    >>> value_list_m('Frodo',[{'Bilbo':'Ian','Frodo':'Elijah'}, {'Bilbo':'Martin','Thorin':'Rich'}])
     ['Elijah', 'NOT PRESENT']
     """
     l = []
