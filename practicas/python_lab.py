@@ -60,8 +60,13 @@ def pows_two(numbers):
     6: (Task 0.5.6) Powers-of-2 Set Comprehension
     Given a set of numbers return the powers of two of those numbers
     >>> pows_two({0,1,2,3,4})
-    set([8, 1, 2, 4, 16])
+    set([0, 1, 4, 9, 16])
     """
+    lista = set()
+    for n in numbers:
+        num = n**2
+        lista.add(num)
+    return lista
 
 
 def set_product57(xs, ys):
