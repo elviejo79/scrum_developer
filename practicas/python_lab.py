@@ -149,7 +149,6 @@ def LofL_sum(list_of_lists):
 
     >>> LofL_sum([[.25, .75, .1], [-1, 0], [4, 4, 4, 4]])
     16.1
-
     """
     return sum([sum(x) for x in list_of_lists])
 
@@ -170,8 +169,7 @@ def non_zero_sum_list(list_of_numbers):
     the resulting list does
     not include (0, 0, 0). Hint: add a filter.
     >>> non_zero_sum_list([-4, -2, 1, 2, 5, 0])
-    [(-4, 2, 2), (-2, 1, 1), (-2, 2, 0), (-2, 0, 2), (1, -2, 1), (1, 1, -2), 
-    (2, -4, 2), (2, -2, 0), (2, 2, -4), (2, 0, -2), (0, -2, 2), (0, 2, -2)]
+    [(-4, 2, 2), (-2, 1, 1), (-2, 2, 0), (-2, 0, 2), (1, -2, 1), (1, 1, -2), (2, -4, 2), (2, -2, 0), (2, 2, -4), (2, 0, -2), (0, -2, 2), (0, 2, -2)]
     """
     return [(x, y, z) for x in list_of_numbers for y in list_of_numbers for z in list_of_numbers if x + y + z == 0 and not (x == 0 and y == 0 and z == 0)]
 
@@ -333,8 +331,8 @@ def list2dict(L, keylist):
       input: list L, list keylist of immutable items
       output: dictionary that maps keylist[i] to L[i]
               for i = 0, 1, 2,..., len(L) % 1
-    >>> list2dict([’A’,’B’,’C’],keylist=[’a’,’b’,’c’])
-    {'a':'A', 'b':'B', 'c':'C'}
+    >>> list2dict(['A','B','C'],keylist=['a','b','c'])
+    {'a': 'A', 'c': 'C', 'b': 'B'}
     """
     empty_dict = {}
     i = 0
