@@ -14,6 +14,7 @@ def minutes_in_weeks(weeks):
     """
     return weeks * 7 * 24 * 60
 
+
 def remainder_without_mod(numerator, divisor):
     """
     2: (Task 0.5.2) Remainder
@@ -43,7 +44,7 @@ def predict_expresion(x, y, prediction):
     >>> predict_expression(-9, 1/2, 1)
     1
     """
-    return 2 ** (y + prediction) if x + 10 < 0 else 2**(y - prediction)
+    return 2 ** (y + prediction) if x + 10 < 0 else 2**(y-prediction)
 
 
 def squares_set(numbers):
@@ -77,7 +78,7 @@ def pows_two(numbers):
 def set_product57(xs, ys):
     """
     7: (Task 0.5.7) Double comprehension evaluating to nine-element set
-    Return a set containing the multiplication of every element 
+    Return a set containing the multiplication of every element
     in a set multiplied by the other
     >>> set_product57({1,2,3},{3,4,5})
     set([3, 4, 5, 6, 8, 9, 10, 12, 15])
@@ -148,8 +149,8 @@ def LofL_sum(list_of_lists):
 
     >>> LofL_sum([[.25, .75, .1], [-1, 0], [4, 4, 4, 4]])
     16.1
-
     """
+    return sum([sum(li) for li in list_of_lists])
 
 
 def zero_sum_list(list_of_numbers):
@@ -168,10 +169,8 @@ def non_zero_sum_list(list_of_numbers):
     the resulting list does
     not include (0, 0, 0). Hint: add a filter.
     >>> non_zero_sum_list([-4, -2, 1, 2, 5, 0])
-    [(-4, 2, 2), (-2, 1, 1), (-2, 2, 0), (-2, 0, 2), (1, -2, 1), (1, 1, -2), 
-    (2, -4, 2), (2, -2, 0), (2, 2, -4), (2, 0, -2), (0, -2, 2), (0, 2, -2)]
+    [(-4, 2, 2), (-2, 1, 1), (-2, 2, 0), (-2, 0, 2), (1, -2, 1), (1, 1, -2), (2, -4, 2), (2, -2, 0), (2, 2, -4), (2, 0, -2), (0, -2, 2), (0, 2, -2)]
     """
-
     return [(x, y, z) for x in list_of_numbers for y in list_of_numbers for z in list_of_numbers if x + y + z == 0 and not (x == 0 and y == 0 and z == 0)]
 
 
@@ -214,7 +213,7 @@ def range_and_zip(letters):
     Do not use a list comprehension use range and zip
     """
     return zip(range(len(letters)), letters)
-    
+
 
 def list_sum_zip(A, B):
     """
@@ -332,8 +331,8 @@ def list2dict(L, keylist):
       input: list L, list keylist of immutable items
       output: dictionary that maps keylist[i] to L[i]
               for i = 0, 1, 2,..., len(L) % 1
-    >>> list2dict([’A’,’B’,’C’],keylist=[’a’,’b’,’c’])
-    {'a':'A', 'b':'B', 'c':'C'}
+    >>> list2dict(['A','B','C'],keylist=['a','b','c'])
+    {'a': 'A', 'c': 'C', 'b': 'B'}
     """
     empty_dict = {}
     i = 0
