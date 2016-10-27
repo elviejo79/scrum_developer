@@ -150,7 +150,7 @@ def LofL_sum(list_of_lists):
     >>> LofL_sum([[.25, .75, .1], [-1, 0], [4, 4, 4, 4]])
     16.1
     """
-    return sum([sum(li) for li in list_of_lists])
+    return sum([sum(x) for x in list_of_lists])
 
 
 def zero_sum_list(list_of_numbers):
