@@ -208,9 +208,9 @@ def odd_num_list(n):
 def range_and_zip(letters):
     """
     (Task 0.5.19) Using range and zip
+    Do not use a list comprehension use range and zip
     >>> range_and_zip("ABCDE")
     [(0, 'A'), (1, 'B'), (2, 'C'), (3, 'D'), (4, 'E')]
-    Do not use a list comprehension use range and zip
     """
     return zip(range(len(letters)), letters)
 
