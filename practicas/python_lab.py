@@ -37,7 +37,6 @@ def divisble_by_3(num):
     return "True" if num % 3 == 0 else "False"
 
 
-
 def predict_expresion(x, y, prediction):
     """
     4: (Task 0.5.4) Conditional Expression
