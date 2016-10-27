@@ -166,6 +166,7 @@ def odd_num_list(n):
     >>> odd_num_list(17)
     [1, 3, 5, 7, 9, 11, 13, 15]
     """
+    return [i for i in range(n) if i % 2 != 0]
 
 
 def range_and_zip(letters):
@@ -176,7 +177,7 @@ def range_and_zip(letters):
 
     Do not use a list comprehension use range and zip
     """
-
+    
 
 def list_sum_zip(A, B):
     """
