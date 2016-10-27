@@ -308,7 +308,7 @@ def cubes(L):
     >>> cubes([1, 2, 3])
     [1, 8, 27]
     """
-    return []
+    return [x**3 for x in L]
 
 
 def dict2list(dct, keylist):
