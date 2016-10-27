@@ -76,11 +76,14 @@ def set_product57(xs, ys):
 def set_product58(xs, ys):
     """
     8: (Task 0.5.8) Double comprehension evaluating to five-element set
-    Return a set containing the multiplicacion of every elment in a set multiplied by the other
+    Return a set containing the multiplicacion of every elment in a set
+    multiplied by the other
     where elements dont repeat
     >>> set_product58({1,2,3},{3,4,5})
     set([3, 4, 5, 6, 8, 10, 12, 15])
     """
+
+    return {x * y for x in xs for y in ys}
 
 
 def intersection(Ss, Ts):
