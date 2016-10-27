@@ -44,7 +44,7 @@ def predict_expresion(x, y, prediction):
     >>> predict_expression(-9, 1/2, 1)
     1
     """
-
+    return 2 ** (y + prediction ) if x + 10 < 0 else 2**(y-prediction)
 
 def squares_set(numbers):
     """
