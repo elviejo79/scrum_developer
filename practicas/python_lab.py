@@ -13,7 +13,7 @@ def minutes_in_weeks(weeks):
     >>> minutes_in_weeks(2)
     20160
     """
-    return weeks * 7 * 24 * 60
+    return weeks*7*24*60
 
 
 def reminder_without_mod(numerator, divisor):
@@ -24,7 +24,6 @@ def reminder_without_mod(numerator, divisor):
     >>> remainder_without_mod(30,7)
     2
     """
-    return numerator - ((numerator // divisor) * divisor)
 
 
 def divisble_by_3(num):
@@ -38,6 +37,7 @@ def divisble_by_3(num):
     return "True" if num % 3 == 0 else "False"
 
 
+
 def predict_expresion(x, y, prediction):
     """
     4: (Task 0.5.4) Conditional Expression
@@ -45,7 +45,8 @@ def predict_expresion(x, y, prediction):
     >>> predict_expression(-9, 1/2, 1)
     1
     """
-    return 2 ** (y + prediction ) if x + 10 < 0 else 2**(y-prediction)
+    return 2 ** (y + prediction) if x + 10 < 0 else 2**(y - prediction)
+
 
 def squares_set(numbers):
     """
@@ -72,7 +73,11 @@ def set_product57(xs, ys):
     >>> set_product57({1,2,3},{3,4,5})
     set([3, 4, 5, 6, 8, 9, 10, 12, 15])
     """
-
+    resultado  = set()
+    for i in xs:
+        for j in ys:
+            resultado.add(i*j)
+    return resultado
 
 def set_product58(xs, ys):
     """
@@ -200,8 +205,9 @@ def value_list(k, dlist):
     >>> value_list('James',[{'James':'Sean', 'director':'Terence'}, {'James':'Roger', 'director':'Lewis'}, {'James':'Pierce', 'director':'Roger'}])
     ['Sean', 'Roger', 'Pierce']
     """
-
-
+    return [i[k] for i in dlist]
+    
+    
 def value_list_m(k, dlist):
     """
     Task 0.5.22: Modify the comprehension in Task 0.5.21 to handle the case
@@ -281,4 +287,10 @@ def list2dict(L, keylist):
     >>> list2dict([’A’,’B’,’C’],keylist=[’a’,’b’,’c’])
     {'a':'A', 'b':'B', 'c':'C'}
     """
-    return {}
+    empty_dict = {}
+    i = 0
+    while i < len(keylist):
+        empty_dict[keylist[i]] = L[i]
+        i = i + 1
+    return empty_dict
+    
