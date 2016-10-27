@@ -37,7 +37,7 @@ def divisible_by_3(num):
     >>> divisible_by_3(7)
     False
     """
-    return True if num % 3 == 0 else False
+    return bool(num % 3 == 0)
 
 
 def predict_expression(x, y, prediction):
