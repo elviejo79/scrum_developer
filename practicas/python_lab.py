@@ -26,15 +26,15 @@ def remainder_without_mod(numerator, divisor):
     return numerator - ((numerator // divisor) * divisor)
 
 
-def divisible_by_3(num):
+def divisble_by_3(num):
     """
     3: (Task 0.5.3) Divisibility
     >>> divisible_by_3(9)
     True
-    >>> divisible_by_3(7)
+    >>> divisibre_by_3(7)
     False
     """
-    return "True" if num % 3 == 0 else "False"
+    return True if num % 3 == 0 else False
 
 
 def predict_expresion(x, y, prediction):
@@ -96,9 +96,8 @@ def set_product58(xs, ys):
     Return a set containing the multiplicacion of every elment in a set
     multiplied by the other where elements dont repeat
     >>> set_product58({1,2,3},{3,4,5})
-    set([3, 4, 5, 6, 8, 10, 12, 15])
+    set([3, 4, 5, 6, 8, 9, 10, 12, 15])
     """
-
     return {x * y for x in xs for y in ys}
 
 
@@ -151,19 +150,27 @@ def LofL_sum(list_of_lists):
     16.1
     """
     return sum([sum(x) for x in list_of_lists])
+=========
+    """
+>>>>>>>>> local version
 
 
 def zero_sum_list(list_of_numbers):
     """
     13: (Task 0.5.14) Three-element tuples summing to zero
     >>> zero_sum_list([-4, -2, 1, 2, 5, 0])
-    [(-4, 2, 2), (-2, 1, 1), (-2, 2, 0), (-2, 0, 2), (1, -2, 1), (1, 1, -2), 
-    (2, -4, 2), (2, -2, 0), (2, 2, -4), (2, 0, -2), (0, -2, 2), (0, 2, -2), 
-    (0, 0, 0)]
+    [(-4, 2, 2), (-2, 1, 1), (-2, 2, 0), (-2, 0, 2), (1, -2, 1), (1, 1, -2), (2, -4, 2), (2, -2, 0), (2, 2, -4), (2, 0, -2), (0, -2, 2), (0, 2, -2), (0, 0, 0)]
     """
+    return [(i,j,k) for i in list_of_numbers for j in list_of_numbers for k in list_of_numbers if i+j+k==0]
+    
 
 
 def non_zero_sum_list(list_of_numbers):
+    """
+    Task 0.5.15: Modify the comprehension of the previous task so that 
+    the resulting list does
+    not include (0, 0, 0). Hint: add a filter.
+    >>> non_zero_sum_list([-4, -2, 1, 2, 5, 0])
     """
     Task 0.5.15: Modify the comprehension of the previous task so that 
     the resulting list does
@@ -248,6 +255,26 @@ def value_list_m(k, dlist):
     contains that key, and 'NOT PRESENT' otherwise.
     >>> value_list_m('Bilbo',[{'Bilbo':'Ian','Frodo':'Elijah'}, {'Bilbo':'Martin','Thorin':'Rich'}])
     ['Ian', 'Martin']
+def value_list(k, dlist):
+    """
+    (Task 0.5.21) Extracting the value corresponding to key k 
+    from each dictionary in a list
+    >>> value_list('James',[{'James':'Sean', 'director':'Terence'}, {'James':'Roger', 'director':'Lewis'}, {'James':'Pierce', 'director':'Roger'}])
+    ['Sean', 'Roger', 'Pierce']
+    """
+    return [i[k] for i in dlist]
+
+
+def value_list_m(k, dlist):
+    """
+    Task 0.5.22: Modify the comprehension in Task 0.5.21 to handle the case
+    in which k might not appear in all the dictionaries.
+    The comprehension evaluates to the list whose ith element is
+    the value corresponding to key k in the i
+    th dictionary in dlist if that dictionary
+    contains that key, and 'NOT PRESENT' otherwise.
+    >>> value_list_m('Bilbo',[{'Bilbo':'Ian','Frodo':'Elijah'}, {'Bilbo':'Martin','Thorin':'Rich'}])
+    ['Ian', 'Martin']
     >>> value_list_m('Frodo',[{'Bilbo':'Ian','Frodo':'Elijah'}, {'Bilbo':'Martin','Thorin':'Rich'}])
     ['Elijah', 'NOT PRESENT']
     """
@@ -257,6 +284,60 @@ def value_list_m(k, dlist):
             l.append(data[k])
         else:
             l.append("NOT PRESENT")
+    from each dictionary in a list
+    >>> value_list('James',[{'James':'Sean', 'director':'Terence'}, {'James':'Roger', 'director':'Lewis'}, {'James':'Pierce', 'director':'Roger'}])
+    ['Sean', 'Roger', 'Pierce']
+    """
+    return [i[k] for i in dlist]
+
+
+def value_list_m(k, dlist):
+    """
+    Task 0.5.22: Modify the comprehension in Task 0.5.21 to handle the case
+    in which k might not appear in all the dictionaries.
+    The comprehension evaluates to the list whose ith element is
+    the value corresponding to key k in the i
+    th dictionary in dlist if that dictionary
+    contains that key, and 'NOT PRESENT' otherwise.
+    >>> value_list_m('Bilbo',[{'Bilbo':'Ian','Frodo':'Elijah'}, {'Bilbo':'Martin','Thorin':'Rich'}])
+    ['Ian', 'Martin']
+    >>> value_list_m('Frodo',[{'Bilbo':'Ian','Frodo':'Elijah'}, {'Bilbo':'Martin','Thorin':'Rich'}])
+    ['Elijah', 'NOT PRESENT']
+    """
+    l = []
+    for data in dlist:
+        if k in data:
+            l.append(data[k])
+        else:
+            l.append("NOT PRESENT")
+    return l
+
+
+def square_dict(n):
+    """
+    (Task 0.5.23) A dictionary mapping integers to their squares
+    Replace {...} with a one-line dictionary comprehension
+    >>> square_dict(10)
+    {0: 0, 1: 1, 2: 4, 3: 9, 4: 16, 5: 25, 6: 36, 7: 49, 8: 64, 9: 81}
+    """
+    i=0
+    cadena=""
+    dicc = {}
+    while i<n:
+        rep = i * i
+        # cadena = i,": ", rep
+        dicc[i]= rep
+        i = i + 1
+    return dicc
+    
+
+def dictionary_mapping(names, id2salaries):
+    """
+    (Task 0.5.26) A dictionary mapping names to salaries
+    >>> dictionary_mapping(['Larry', 'Curly', 'Moe'],{0:100.0, 1:120.50, 2:99})
+    {'Larry': 100.0, 'Moe': 99, 'Curly': 120.5}
+    """
+    return (dict(zip(names, id2salaries.values())))
     return l
 
 
@@ -331,8 +412,99 @@ def list2dict(L, keylist):
       input: list L, list keylist of immutable items
       output: dictionary that maps keylist[i] to L[i]
               for i = 0, 1, 2,..., len(L) % 1
+<<<<<<<<< saved version
     >>> list2dict(['A','B','C'],keylist=['a','b','c'])
     {'a': 'A', 'c': 'C', 'b': 'B'}
+=========
+    
+
+def dictionary_mapping(names, id2salaries):
+    """
+    (Task 0.5.26) A dictionary mapping names to salaries
+    >>> dictionary_mapping(['Larry', 'Curly', 'Moe'],{0:100.0, 1:120.50, 2:99})
+    {'Larry': 100.0, 'Moe': 99, 'Curly': 120.5}
+    """
+    return (dict(zip(names, id2salaries.values())))
+    return l
+
+
+def square_dict(n):
+    """
+    (Task 0.5.23) A dictionary mapping integers to their squares
+    Replace {...} with a one-line dictionary comprehension
+    >>> square_dict(10)
+    {0: 0, 1: 1, 2: 4, 3: 9, 4: 16, 5: 25, 6: 36, 7: 49, 8: 64, 9: 81}
+    """
+    i=0
+    cadena=""
+    dicc = {}
+    while i<n:
+        rep = i * i
+        # cadena = i,": ", rep
+        dicc[i]= rep
+        i = i + 1
+    return dicc
+    
+
+def dictionary_mapping(names, id2salaries):
+    """
+    (Task 0.5.26) A dictionary mapping names to salaries
+    >>> dictionary_mapping(['Larry', 'Curly', 'Moe'],{0:100.0, 1:120.50, 2:99})
+    {'Larry': 100.0, 'Moe': 99, 'Curly': 120.5}
+    """
+    return (dict(zip(names, id2salaries.values())))
+
+
+def nextInts(L):
+    """
+    Task 0.5.28: Define a one-line procedure nextInts(L) specified as follows:
+      input: list L of integers
+      output: list of integers whose ith element is one more than the i
+      th element of L
+    >>> nextInts([1, 5, 7])
+    [2, 6, 8]
+    """
+    return [x + 1 for x in L]
+
+
+def cubes(L):
+    """
+    Task 0.5.29: Define a one-line procedure cubes(L) specified as follows:
+    - input: list L of numbers
+    - output: list of numbers whose ith element is the cube
+              of the ith element of L
+    >>> cubes([1, 2, 3])
+    [1, 8, 27]
+    """
+    return []
+
+
+def dict2list(dct, keylist):
+    """
+    Task 0.5.30: Define a one-line procedure
+                 dict2list(dct,keylist) with this spec:
+      input: dictionary dct, list keylist consisting of the keys of dct
+      output: list L such that L[i] = dct[keylist[i]]
+              for i = 0, 1, 2,..., len(keylist) % 1
+    >>> dict2list({'a':'A', 'b':'B', 'c':'C'},['b','c','a'])
+    ['B', 'C', 'A']
+    """
+    return []
+
+
+def list2dict(L, keylist):
+    """
+    Task 0.5.31: Define a one-line procedure list2dict(L, keylist)
+                 specified as follows:
+      input: list L, list keylist of immutable items
+      output: dictionary that maps keylist[i] to L[i]
+              for i = 0, 1, 2,..., len(L) % 1
+<<<<<<<<< saved version
+
+=========
+
+>>>>>>>>> local version
+>>>>>>>>> local version
     """
     empty_dict = {}
     i = 0
