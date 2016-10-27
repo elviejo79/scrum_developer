@@ -195,6 +195,9 @@ def value_list(k, dlist):
     >>> value_list('James',[{'James':'Sean', 'director':'Terence'}, {'James':'Roger', 'director':'Lewis'}, {'James':'Pierce', 'director':'Roger'}])
     ['Sean', 'Roger', 'Pierce']
     """
+    return [i[k] for i in dlist]
+    
+    
 
 
 def value_list_m(k, dlist):
