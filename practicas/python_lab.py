@@ -14,6 +14,7 @@ def minutes_in_weeks(weeks):
     """
     return weeks * 7 * 24 * 60
 
+
 def reminder_without_mod(numerator, divisor):
     """
     2: (Task 0.5.2) Remainder
@@ -77,7 +78,7 @@ def pows_two(numbers):
 def set_product57(xs, ys):
     """
     7: (Task 0.5.7) Double comprehension evaluating to nine-element set
-    Return a set containing the multiplication of every element 
+    Return a set containing the multiplication of every element
     in a set multiplied by the other
     >>> set_product57({1,2,3},{3,4,5})
     set([3, 4, 5, 6, 8, 9, 10, 12, 15])
