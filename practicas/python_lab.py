@@ -29,19 +29,12 @@ def remainder_without_mod(numerator, divisor):
 def divisible_by_3(num):
     """
     3: (Task 0.5.3) Divisibility
-    >>> divisble_by_3(9)
+    >>> divisible_by_3(9)
     True
-<<<<<<< HEAD
-    >>> divisble_by_3(7)
-    False
-    """
-    return  bool(num % 3 == 0)
-=======
     >>> divisible_by_3(7)
     False
     """
     return True if num % 3 == 0 else False
->>>>>>> 2a87b37ec4f06fe5480204e3233e714969812255
 
 
 def predict_expresion(x, y, prediction):
@@ -314,7 +307,7 @@ def cubes(L):
     >>> cubes([1, 2, 3])
     [1, 8, 27]
     """
-    return [x**3 for x in L]
+    return []
 
 
 def dict2list(dct, keylist):
@@ -327,11 +320,7 @@ def dict2list(dct, keylist):
     >>> dict2list({'a':'A', 'b':'B', 'c':'C'},['b','c','a'])
     ['B', 'C', 'A']
     """
-    l = []
-    for key, value in dct.items():
-        if key in keylist:
-            l.append(value)
-    return l
+    return []
 
 
 def list2dict(L, keylist):
