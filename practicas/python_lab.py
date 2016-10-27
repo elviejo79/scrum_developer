@@ -207,6 +207,7 @@ def list_sum_zip(A, B):
     >>> list_sum_zip([10,20,30],[1,2,3])
     [11, 22, 33]
     """
+    return [sum(x) for x in zip(A,B)]
 
 
 def value_list(k, dlist):
