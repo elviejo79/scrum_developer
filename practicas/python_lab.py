@@ -72,7 +72,6 @@ def pows_two(numbers):
     set([0, 1, 4, 16, 9])
     """
     listaAux = [i * i for i in numbers]
-    print listaAux
     return set(listaAux)
 
 
