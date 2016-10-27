@@ -25,6 +25,7 @@ def reminder_without_mod(numerator, divisor):
     """
     return numerator - ((numerator // divisor) * divisor)
 
+
 def divisble_by_3(num):
     """
     3: (Task 0.5.3) Divisibility
@@ -117,7 +118,7 @@ def list_average(list_of_numbers):
     """
 
     return sum(list_of_numbers) / len(list_of_numbers)
-    
+
 
 def cartesian_product(Xs, Ys):
     """
@@ -203,13 +204,8 @@ def range_and_zip(letters):
     [(0, 'A'), (1, 'B'), (2, 'C'), (3, 'D'), (4, 'E')]
     Do not use a list comprehension use range and zip
     """
-    i = 0
-    _list = []
-    for ch in letters:
-        _list.append((i, ch))
-        i = i + 1
-    return _list
-
+    return zip(range(len(letters)), letters)
+    
 
 def list_sum_zip(A, B):
     """
