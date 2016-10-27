@@ -13,7 +13,7 @@ def minutes_in_weeks(weeks):
     >>> minutes_in_weeks(2)
     20160
     """
-    return weeks * 7 * 24 * 60
+    return weeks*7*24*60
 
 
 def reminder_without_mod(numerator, divisor):
@@ -24,7 +24,6 @@ def reminder_without_mod(numerator, divisor):
     >>> remainder_without_mod(30,7)
     2
     """
-    return numerator - ((numerator // divisor) * divisor)
 
 
 def divisble_by_3(num):
@@ -37,6 +36,10 @@ def divisble_by_3(num):
     """
     return "True" if num % 3 == 0 else "False"
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> c38539bc18acd4d0c750f94c9ef1d9a97dd1ef5b
 
 def predict_expresion(x, y, prediction):
     """
@@ -207,8 +210,9 @@ def value_list(k, dlist):
     >>> value_list('James',[{'James':'Sean', 'director':'Terence'}, {'James':'Roger', 'director':'Lewis'}, {'James':'Pierce', 'director':'Roger'}])
     ['Sean', 'Roger', 'Pierce']
     """
-
-
+    return [i[k] for i in dlist]
+    
+    
 def value_list_m(k, dlist):
     """
     Task 0.5.22: Modify the comprehension in Task 0.5.21 to handle the case
@@ -288,4 +292,10 @@ def list2dict(L, keylist):
     >>> list2dict([’A’,’B’,’C’],keylist=[’a’,’b’,’c’])
     {'a':'A', 'b':'B', 'c':'C'}
     """
-    return {}
+    empty_dict = {}
+    i = 0
+    while i < len(keylist):
+        empty_dict[keylist[i]] = L[i]
+        i = i + 1
+    return empty_dict
+    
