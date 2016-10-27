@@ -68,13 +68,11 @@ def pows_two(numbers):
     6: (Task 0.5.6) Powers-of-2 Set Comprehension
     Given a set of numbers return the powers of two of those numbers
     >>> pows_two({0,1,2,3,4})
-    set([0, 1, 4, 9, 16])
+    set([0, 1, 4, 16, 9])
     """
-    lista = set()
-    for n in numbers:
-        num = n**2
-        lista.add(num)
-    return lista
+    listaAux = [i * i for i in numbers]
+    print listaAux
+    return set(listaAux)
 
 
 def set_product57(xs, ys):
@@ -96,12 +94,8 @@ def set_product58(xs, ys):
     """
     8: (Task 0.5.8) Double comprehension evaluating to five-element set
     Return a set containing the multiplicacion of every elment in a set
-<<<<<<< HEAD
     multiplied by the other
     where elements dont repeat
-=======
-    multiplied by the other where elements dont repeat
->>>>>>> 00dcf3e1b032146b91cc15648bd7061810ff16e7
     >>> set_product58({1,2,3},{3,4,5})
     set([3, 4, 5, 6, 8, 10, 12, 15])
     """
@@ -136,13 +130,8 @@ def cartesian_product(Xs, Ys):
     11: (Task 0.5.11) Cartesian-product comprehension
     a double list comprehension over {'A','B','C'} and {1,2,3}
     >>> cartesian_product(['A','B','C'],[1,2,3])
-<<<<<<< HEAD
-    [['A', 1], ['A', 2], ['A', 3], ['B', 1], ['B', 2],['B', 3],['C', 1], 
-    ['C', 2], ['C', 3]]
-=======
     [['A', 1], ['A', 2], ['A', 3], ['B', 1], ['B', 2], ['B', 3], \
 ['C', 1], ['C', 2], ['C', 3]]
->>>>>>> 00dcf3e1b032146b91cc15648bd7061810ff16e7
     """
     my_list = list()
     for x in Xs:
