@@ -2,12 +2,10 @@
 """ Repaso interactivo de python
     Traducido de: http://grading.codingthematrix.com/edition1/index.html
 """
-from itertools import combinations
-from collections import Iterable
 
 
 def minutes_in_weeks(weeks):
-    """ 
+    """
     1: (Task 0.5.1) Minutes in a Week
     >>> minutes_in_weeks(1)
     10080
@@ -47,7 +45,7 @@ def predict_expression(x, y, prediction):
     >>> predict_expression(-9, 1/2, 1)
     1
     """
-    return 2**(y+1/2) if x+10<0 else 2**(y-1/2)
+    return 2**(y + 1 / 2) if x + 10 < 0 else 2**(y - 1 / 2)
 
 
 def squares_set(numbers):
@@ -144,7 +142,7 @@ def LofL_sum(list_of_lists):
     """
     12: (Task 0.5.12) Sum of numbers in list of list of numbers
     a one-line expression of the form sum([sum(...) ... ]) that
-    includes a comprehension and evaluates to the sum of all numbers in all 
+    includes a comprehension and evaluates to the sum of all numbers in all
     the lists.
 
     >>> LofL_sum([[.25, .75, .1], [-1, 0], [4, 4, 4, 4]])
@@ -159,13 +157,12 @@ def zero_sum_list(list_of_numbers):
     >>> zero_sum_list([-4, -2, 1, 2, 5, 0])
     [(-4, 2, 2), (-2, 1, 1), (-2, 2, 0), (-2, 0, 2), (1, -2, 1), (1, 1, -2), (2, -4, 2), (2, -2, 0), (2, 2, -4), (2, 0, -2), (0, -2, 2), (0, 2, -2), (0, 0, 0)]
     """
-    return [(i,j,k) for i in list_of_numbers for j in list_of_numbers for k in list_of_numbers if i+j+k==0]
-    
+    return [(i, j, k) for i in list_of_numbers for j in list_of_numbers for k in list_of_numbers if i + j + k == 0]
 
 
 def non_zero_sum_list(list_of_numbers):
     """
-    Task 0.5.15: Modify the comprehension of the previous task so that 
+    Task 0.5.15: Modify the comprehension of the previous task so that
     the resulting list does
     not include (0, 0, 0). Hint: add a filter.
     >>> non_zero_sum_list([-4, -2, 1, 2, 5, 0])
@@ -219,7 +216,7 @@ def list_sum_zip(A, B):
     """
     (Task 0.5.20) Using zip to find elementwise sums
     A one-line comprehension that uses zip together with the variables A and B.
-    The comprehension should evaluate to a list whose ith element is the ith 
+    The comprehension should evaluate to a list whose ith element is the ith
     element of
     A plus the ith element of B.
     >>> list_sum_zip([10,20,30],[1,2,3])
@@ -230,7 +227,7 @@ def list_sum_zip(A, B):
 
 def value_list(k, dlist):
     """
-    (Task 0.5.21) Extracting the value corresponding to key k 
+    (Task 0.5.21) Extracting the value corresponding to key k
     from each dictionary in a list
     >>> value_list('James',[{'James':'Sean', 'director':'Terence'}, {'James':'Roger', 'director':'Lewis'}, {'James':'Pierce', 'director':'Roger'}])
     ['Sean', 'Roger', 'Pierce']
@@ -267,16 +264,14 @@ def square_dict(n):
     >>> square_dict(10)
     {0: 0, 1: 1, 2: 4, 3: 9, 4: 16, 5: 25, 6: 36, 7: 49, 8: 64, 9: 81}
     """
-    i=0
-    cadena=""
+    i = 0
     dicc = {}
-    while i<n:
+    while i < n:
         rep = i * i
-        # cadena = i,": ", rep
-        dicc[i]= rep
+        dicc[i] = rep
         i = i + 1
     return dicc
-    
+
 
 def dictionary_mapping(names, id2salaries):
     """
