@@ -92,14 +92,8 @@ def set_product57(xs, ys):
 def set_product58(xs, ys):
     """
     8: (Task 0.5.8) Double comprehension evaluating to five-element set
-<<<<<<< HEAD
-    Return a set containing the multiplicacion of every elment 
-    in a set multiplied by the other
-=======
     Return a set containing the multiplicacion of every elment in a set
-    multiplied by the other
->>>>>>> 2f6d404a0ad37e0672d6f91619a37fc1f5f722fd
-    where elements dont repeat
+    multiplied by the other where elements dont repeat
     >>> set_product58({1,2,3},{3,4,5})
     set([3, 4, 5, 6, 8, 10, 12, 15])
     """
@@ -135,13 +129,8 @@ def cartesian_product(Xs, Ys):
     11: (Task 0.5.11) Cartesian-product comprehension
     a double list comprehension over {'A','B','C'} and {1,2,3}
     >>> cartesian_product(['A','B','C'],[1,2,3])
-<<<<<<< HEAD
-    [['A', 1], ['A', 2], ['A', 3], ['B', 1], ['B', 2],['B', 3],['C', 1], 
-    ['C', 2], ['C', 3]]
-=======
     [['A', 1], ['A', 2], ['A', 3], ['B', 1], ['B', 2], ['B', 3], \
 ['C', 1], ['C', 2], ['C', 3]]
->>>>>>> 2f6d404a0ad37e0672d6f91619a37fc1f5f722fd
     """
     my_list = list()
     for x in Xs:
@@ -197,13 +186,8 @@ def first_zero_sum_list(list_of_numbers):
 
 def is_element_repeated(things):
     """
-<<<<<<< HEAD
-    17: Task 0.5.17: Find an example of a list L such that len(L) 
-    and len(list(set(L))) are diferent."
-=======
     17: Task 0.5.17: Find an example of a list L such that len(L) and
     len(list(set(L))) are diferent."
->>>>>>> c1e29f4e93ecf15170872e8f85f72cfc5c2e95e9
     >>> is_element_repeated([1,1,2,3])
     True
     >>> is_element_repeated([1,2,3,4])
