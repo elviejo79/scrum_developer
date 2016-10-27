@@ -12,7 +12,7 @@ def minutes_in_weeks(weeks):
     >>> minutes_in_weeks(2)
     20160
     """
-   
+    return weeks * 7 * 24 * 60
 
 def reminder_without_mod(numerator, divisor):
     """
