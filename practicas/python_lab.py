@@ -13,7 +13,7 @@ def minutes_in_weeks(weeks):
     >>> minutes_in_weeks(2)
     20160
     """
-    return weeks*7*24*60
+    return weeks * 7 * 24 * 60
 
 
 def reminder_without_mod(numerator, divisor):
@@ -36,10 +36,6 @@ def divisble_by_3(num):
     """
     return "True" if num % 3 == 0 else "False"
 
-<<<<<<< HEAD
-=======
-
->>>>>>> c38539bc18acd4d0c750f94c9ef1d9a97dd1ef5b
 
 def predict_expresion(x, y, prediction):
     """
@@ -86,11 +82,14 @@ def set_product57(xs, ys):
 def set_product58(xs, ys):
     """
     8: (Task 0.5.8) Double comprehension evaluating to five-element set
-    Return a set containing the multiplicacion of every elment in a set multiplied by the other
+    Return a set containing the multiplicacion of every elment in a set
+    multiplied by the other
     where elements dont repeat
     >>> set_product58({1,2,3},{3,4,5})
     set([3, 4, 5, 6, 8, 10, 12, 15])
     """
+
+    return {x * y for x in xs for y in ys}
 
 
 def intersection(Ss, Ts):
@@ -119,8 +118,14 @@ def cartesian_product(Xs, Ys):
     11: (Task 0.5.11) Cartesian-product comprehension
     a double list comprehension over {'A','B','C'} and {1,2,3}
     >>> cartesian_product(['A','B','C'],[1,2,3])
-    [['A', 1], ['A', 2], ['A', 3], ['B', 1], ['B', 2],['B', 3],['C', 1], ['C', 2], ['C', 3]]
+    [['A', 1], ['A', 2], ['A', 3], ['B', 1], ['B', 2], ['B', 3], \
+['C', 1], ['C', 2], ['C', 3]]
     """
+    my_list = list()
+    for x in Xs:
+        for y in Ys:
+            my_list.append([x, y])
+    return my_list
 
 
 def LofL_sum(list_of_lists):
@@ -165,12 +170,14 @@ def first_zero_sum_list(list_of_numbers):
 
 def is_element_repeated(things):
     """
-    17: Task 0.5.17: Find an example of a list L such that len(L) and len(list(set(L))) are diferent."
+    17: Task 0.5.17: Find an example of a list L such that len(L) and
+    len(list(set(L))) are diferent."
     >>> is_element_repeated([1,1,2,3])
     True
     >>> is_element_repeated([1,2,3,4])
     False
     """
+    return bool(len(things) != len(set(things)))
 
 
 def odd_num_list(n):
@@ -202,6 +209,7 @@ def list_sum_zip(A, B):
     >>> list_sum_zip([10,20,30],[1,2,3])
     [11, 22, 33]
     """
+    return [sum(x) for x in zip(A, B)]
 
 
 def value_list(k, dlist):
@@ -211,8 +219,8 @@ def value_list(k, dlist):
     ['Sean', 'Roger', 'Pierce']
     """
     return [i[k] for i in dlist]
-    
-    
+
+
 def value_list_m(k, dlist):
     """
     Task 0.5.22: Modify the comprehension in Task 0.5.21 to handle the case
@@ -298,4 +306,3 @@ def list2dict(L, keylist):
         empty_dict[keylist[i]] = L[i]
         i = i + 1
     return empty_dict
-    
