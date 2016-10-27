@@ -203,7 +203,7 @@ def range_and_zip(letters):
     [(0, 'A'), (1, 'B'), (2, 'C'), (3, 'D'), (4, 'E')]
     Do not use a list comprehension use range and zip
     """
-    i = 0;
+    i = 0
     _list = []
     for ch in letters:
         _list.append((i, ch))
