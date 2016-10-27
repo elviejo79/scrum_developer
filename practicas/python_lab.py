@@ -13,7 +13,7 @@ def minutes_in_weeks(weeks):
     >>> minutes_in_weeks(2)
     20160
     """
-    return weeks * 7 * 24 * 60
+    return weeks*7*24*60
 
 
 def reminder_without_mod(numerator, divisor):
@@ -24,7 +24,6 @@ def reminder_without_mod(numerator, divisor):
     >>> remainder_without_mod(30,7)
     2
     """
-    return numerator - ((numerator // divisor) * divisor)
 
 
 def divisble_by_3(num):
@@ -155,12 +154,14 @@ def first_zero_sum_list(list_of_numbers):
 
 def is_element_repeated(things):
     """
-    17: Task 0.5.17: Find an example of a list L such that len(L) and len(list(set(L))) are diferent."
+    17: Task 0.5.17: Find an example of a list L such that len(L) and
+    len(list(set(L))) are diferent."
     >>> is_element_repeated([1,1,2,3])
     True
     >>> is_element_repeated([1,2,3,4])
     False
     """
+    return bool(len(things) != len(set(things)))
 
 
 def odd_num_list(n):
@@ -200,8 +201,9 @@ def value_list(k, dlist):
     >>> value_list('James',[{'James':'Sean', 'director':'Terence'}, {'James':'Roger', 'director':'Lewis'}, {'James':'Pierce', 'director':'Roger'}])
     ['Sean', 'Roger', 'Pierce']
     """
-
-
+    return [i[k] for i in dlist]
+    
+    
 def value_list_m(k, dlist):
     """
     Task 0.5.22: Modify the comprehension in Task 0.5.21 to handle the case
@@ -281,4 +283,10 @@ def list2dict(L, keylist):
     >>> list2dict([’A’,’B’,’C’],keylist=[’a’,’b’,’c’])
     {'a':'A', 'b':'B', 'c':'C'}
     """
-    return {}
+    empty_dict = {}
+    i = 0
+    while i < len(keylist):
+        empty_dict[keylist[i]] = L[i]
+        i = i + 1
+    return empty_dict
+    
