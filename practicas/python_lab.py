@@ -35,7 +35,8 @@ def divisble_by_3(num):
     >>> divisibre_by_3(7)
     False
     """
-    return "True" if num  % 3 == 0 else "False"
+    return "True" if num % 3 == 0 else "False"
+
 
 def predict_expresion(x, y, prediction):
     """
