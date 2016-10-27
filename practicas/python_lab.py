@@ -151,6 +151,7 @@ def LofL_sum(list_of_lists):
     16.1
 
     """
+    return sum([sum(x) for x in list_of_lists])
 
 
 def zero_sum_list(list_of_numbers):
