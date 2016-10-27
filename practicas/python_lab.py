@@ -23,7 +23,7 @@ def reminder_without_mod(numerator, divisor):
     >>> remainder_without_mod(30,7)
     2
     """
-
+    return numerator - ((numerator // divisor) * divisor)
 
 def divisble_by_3(num):
     """
