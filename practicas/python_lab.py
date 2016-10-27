@@ -238,7 +238,7 @@ def nextInts(L):
     >>> nextInts([1, 5, 7])
     [2, 6, 8]
     """
-    return []
+    return [x + 1 for x in L]
 
 
 def cubes(L):
