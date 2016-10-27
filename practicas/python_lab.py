@@ -198,8 +198,6 @@ def value_list(k, dlist):
     return [i[k] for i in dlist]
     
     
-
-
 def value_list_m(k, dlist):
     """
     Task 0.5.22: Modify the comprehension in Task 0.5.21 to handle the case
