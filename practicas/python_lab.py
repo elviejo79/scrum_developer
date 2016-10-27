@@ -6,7 +6,6 @@
 
 def minutes_in_weeks(weeks):
     """ 1: (Task 0.5.1) Minutes in a Week
-
     >>> minutes_in_weeks(1)
     10080
 
@@ -26,7 +25,6 @@ def reminder_without_mod(numerator, divisor):
     """
     return numerator - ((numerator // divisor) * divisor)
 
-
 def divisble_by_3(num):
     """
     3: (Task 0.5.3) Divisibility
@@ -35,6 +33,7 @@ def divisble_by_3(num):
     >>> divisibre_by_3(7)
     False
     """
+    return "True" if num % 3 == 0 else "False"
 
 
 def predict_expresion(x, y, prediction):
@@ -44,6 +43,7 @@ def predict_expresion(x, y, prediction):
     >>> predict_expression(-9, 1/2, 1)
     1
     """
+    return 2 ** (y + prediction) if x + 10 < 0 else 2**(y - prediction)
 
 
 def squares_set(numbers):
@@ -60,8 +60,13 @@ def pows_two(numbers):
     6: (Task 0.5.6) Powers-of-2 Set Comprehension
     Given a set of numbers return the powers of two of those numbers
     >>> pows_two({0,1,2,3,4})
-    set([8, 1, 2, 4, 16])
+    set([0, 1, 4, 9, 16])
     """
+    lista = set()
+    for n in numbers:
+        num = n**2
+        lista.add(num)
+    return lista
 
 
 def set_product57(xs, ys):
@@ -71,16 +76,24 @@ def set_product57(xs, ys):
     >>> set_product57({1,2,3},{3,4,5})
     set([3, 4, 5, 6, 8, 9, 10, 12, 15])
     """
+    resultado = set()
+    for i in xs:
+        for j in ys:
+            resultado.add(i * j)
+    return resultado
 
 
 def set_product58(xs, ys):
     """
     8: (Task 0.5.8) Double comprehension evaluating to five-element set
-    Return a set containing the multiplicacion of every elment in a set multiplied by the other
+    Return a set containing the multiplicacion of every elment in a set
+    multiplied by the other
     where elements dont repeat
     >>> set_product58({1,2,3},{3,4,5})
     set([3, 4, 5, 6, 8, 10, 12, 15])
     """
+
+    return {x * y for x in xs for y in ys}
 
 
 def intersection(Ss, Ts):
@@ -89,6 +102,7 @@ def intersection(Ss, Ts):
     >>> intersection({1, 2, 3, 4},{3, 4, 5, 6})
     set([3, 4])
     """
+    return {x for x in Ss for y in Ts if x == y}
 
 
 def list_average(list_of_numbers):
@@ -110,8 +124,14 @@ def cartesian_product(Xs, Ys):
     11: (Task 0.5.11) Cartesian-product comprehension
     a double list comprehension over {'A','B','C'} and {1,2,3}
     >>> cartesian_product(['A','B','C'],[1,2,3])
-    [['A', 1], ['A', 2], ['A', 3], ['B', 1], ['B', 2],['B', 3],['C', 1], ['C', 2], ['C', 3]]
+    [['A', 1], ['A', 2], ['A', 3], ['B', 1], ['B', 2], ['B', 3], \
+['C', 1], ['C', 2], ['C', 3]]
     """
+    my_list = list()
+    for x in Xs:
+        for y in Ys:
+            my_list.append([x, y])
+    return my_list
 
 
 def LofL_sum(list_of_lists):
@@ -142,6 +162,8 @@ def non_zero_sum_list(list_of_numbers):
     [(-4, 2, 2), (-2, 1, 1), (-2, 2, 0), (-2, 0, 2), (1, -2, 1), (1, 1, -2), (2, -4, 2), (2, -2, 0), (2, 2, -4), (2, 0, -2), (0, -2, 2), (0, 2, -2)]
     """
 
+    return [(x, y, z) for x in list_of_numbers for y in list_of_numbers for z in list_of_numbers if x + y + z == 0 and not (x == 0 and y == 0 and z == 0)]
+
 
 def first_zero_sum_list(list_of_numbers):
     """
@@ -149,16 +171,19 @@ def first_zero_sum_list(list_of_numbers):
     >>> first_zero_sum_list([-4, -2, 1, 2, 5, 0])
     [(-4, 2, 2)]
     """
+    return [[(x, y, z) for x in list_of_numbers for y in list_of_numbers for z in list_of_numbers if x + y + z == 0 and x != 0 and y != 0][0]]
 
 
 def is_element_repeated(things):
     """
-    17: Task 0.5.17: Find an example of a list L such that len(L) and len(list(set(L))) are diferent."
+    17: Task 0.5.17: Find an example of a list L such that len(L) and
+    len(list(set(L))) are diferent."
     >>> is_element_repeated([1,1,2,3])
     True
     >>> is_element_repeated([1,2,3,4])
     False
     """
+    return bool(len(things) != len(set(things)))
 
 
 def odd_num_list(n):
@@ -168,6 +193,7 @@ def odd_num_list(n):
     >>> odd_num_list(17)
     [1, 3, 5, 7, 9, 11, 13, 15]
     """
+    return [i for i in range(n) if i % 2 != 0]
 
 
 def range_and_zip(letters):
@@ -189,6 +215,7 @@ def list_sum_zip(A, B):
     >>> list_sum_zip([10,20,30],[1,2,3])
     [11, 22, 33]
     """
+    return [sum(x) for x in zip(A, B)]
 
 
 def value_list(k, dlist):
@@ -197,6 +224,7 @@ def value_list(k, dlist):
     >>> value_list('James',[{'James':'Sean', 'director':'Terence'}, {'James':'Roger', 'director':'Lewis'}, {'James':'Pierce', 'director':'Roger'}])
     ['Sean', 'Roger', 'Pierce']
     """
+    return [i[k] for i in dlist]
 
 
 def value_list_m(k, dlist):
@@ -212,6 +240,13 @@ def value_list_m(k, dlist):
     >>> value_list_m('Frodo',[{'Bilbo':'Ian','Frodo':'Elijah'},{'Bilbo':'Martin','Thorin':'Rich'}])
     ['Elijah', 'NOT PRESENT']
     """
+    l = []
+    for data in dlist:
+        if k in data:
+            l.append(data[k])
+        else:
+            l.append("NOT PRESENT")
+    return l
 
 
 def square_dict(n):
@@ -229,7 +264,7 @@ def dictionary_mapping(names, id2salaries):
     >>> dictionary_mapping(['Larry', 'Curly', 'Moe'],{0:100.0, 1:120.50, 2:99})
     {'Larry': 100.0, 'Moe': 99, 'Curly': 120.5}
     """
-
+    return (dict(zip(names, id2salaries.values())))
 
 def nextInts(L):
     """
@@ -240,7 +275,7 @@ def nextInts(L):
     >>> nextInts([1, 5, 7])
     [2, 6, 8]
     """
-    return []
+    return [x + 1 for x in L]
 
 
 def cubes(L):
@@ -278,4 +313,9 @@ def list2dict(L, keylist):
     >>> list2dict([’A’,’B’,’C’],keylist=[’a’,’b’,’c’])
     {'a':'A', 'b':'B', 'c':'C'}
     """
-    return {}
+    empty_dict = {}
+    i = 0
+    while i < len(keylist):
+        empty_dict[keylist[i]] = L[i]
+        i = i + 1
+    return empty_dict
