@@ -321,7 +321,7 @@ def dict2list(dct, keylist):
     >>> dict2list({'a':'A', 'b':'B', 'c':'C'},['b','c','a'])
     ['B', 'C', 'A']
     """
-    return []
+    return [dct[key] for key in keylist]
 
 
 def list2dict(L, keylist):
