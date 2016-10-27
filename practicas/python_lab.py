@@ -89,6 +89,7 @@ def intersection(Ss, Ts):
     >>> intersection({1, 2, 3, 4},{3, 4, 5, 6})
     set([3, 4])
     """
+    return {x for x in Ss for y in Ts if x == y}
 
 
 def list_average(list_of_numbers):
