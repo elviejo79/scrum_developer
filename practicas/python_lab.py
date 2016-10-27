@@ -139,6 +139,8 @@ def non_zero_sum_list(list_of_numbers):
     >>> non_zero_sum_list([-4, -2, 1, 2, 5, 0])
     [(-4, 2, 2), (-2, 1, 1), (-2, 2, 0), (-2, 0, 2), (1, -2, 1), (1, 1, -2), (2, -4, 2), (2, -2, 0), (2, 2, -4), (2, 0, -2), (0, -2, 2), (0, 2, -2)]
     """
+    
+    return [(x, y, z) for x in list_of_numbers for y in list_of_numbers for z in list_of_numbers if x + y + z == 0 and not (x == 0 and y == 0 and z == 0)]
 
 
 def first_zero_sum_list(list_of_numbers):
