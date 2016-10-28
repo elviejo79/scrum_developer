@@ -14,6 +14,12 @@ def minutes_in_weeks(weeks):
     """
     return weeks * 7 * 24 * 60
 
+
+
+
+
+
+
 def remander_without_mod(numerator, divisor):
     """
     2: (Task 0.5.2) Remainder
@@ -77,7 +83,7 @@ def pows_two(numbers):
 def set_product57(xs, ys):
     """
     7: (Task 0.5.7) Double comprehension evaluating to nine-element set
-    Return a set containing the multiplication of every element 
+    Return a set containing the multiplication of every element
     in a set multiplied by the other
     >>> set_product57({1,2,3},{3,4,5})
     set([3, 4, 5, 6, 8, 9, 10, 12, 15])
@@ -143,7 +149,7 @@ def LofL_sum(list_of_lists):
     """
     12: (Task 0.5.12) Sum of numbers in list of list of numbers
     a one-line expression of the form sum([sum(...) ... ]) that
-    includes a comprehension and evaluates to the sum of all numbers in all 
+    includes a comprehension and evaluates to the sum of all numbers in all
     the lists.
 
     >>> LofL_sum([[.25, .75, .1], [-1, 0], [4, 4, 4, 4]])
@@ -156,23 +162,30 @@ def zero_sum_list(list_of_numbers):
     """
     13: (Task 0.5.14) Three-element tuples summing to zero
     >>> zero_sum_list([-4, -2, 1, 2, 5, 0])
-    [(-4, 2, 2), (-2, 1, 1), (-2, 2, 0), (-2, 0, 2), (1, -2, 1), (1, 1, -2), 
-    (2, -4, 2), (2, -2, 0), (2, 2, -4), (2, 0, -2), (0, -2, 2), (0, 2, -2), 
+    [(-4, 2, 2), (-2, 1, 1), (-2, 2, 0), (-2, 0, 2), (1, -2, 1), (1, 1, -2),
+    (2, -4, 2), (2, -2, 0), (2, 2, -4), (2, 0, -2), (0, -2, 2), (0, 2, -2),
     (0, 0, 0)]
     """
 
 
 def non_zero_sum_list(list_of_numbers):
     """
-    Task 0.5.15: Modify the comprehension of the previous task so that 
+    Task 0.5.15: Modify the comprehension of the previous task so that
     the resulting list does
     not include (0, 0, 0). Hint: add a filter.
     >>> non_zero_sum_list([-4, -2, 1, 2, 5, 0])
-    [(-4, 2, 2), (-2, 1, 1), (-2, 2, 0), (-2, 0, 2), (1, -2, 1), (1, 1, -2), 
+    [(-4, 2, 2), (-2, 1, 1), (-2, 2, 0), (-2, 0, 2), (1, -2, 1), (1, 1, -2),
     (2, -4, 2), (2, -2, 0), (2, 2, -4), (2, 0, -2), (0, -2, 2), (0, 2, -2)]
     """
 
-    return [(x, y, z) for x in list_of_numbers for y in list_of_numbers for z in list_of_numbers if x + y + z == 0 and not (x == 0 and y == 0 and z == 0)]
+    return [
+        (
+            x,
+            y,
+            z) for x in list_of_numbers for y in list_of_numbers for z in list_of_numbers if x +
+        y +
+        z == 0 and not (
+            x == 0 and y == 0 and z == 0)]
 
 
 def first_zero_sum_list(list_of_numbers):
@@ -181,7 +194,13 @@ def first_zero_sum_list(list_of_numbers):
     >>> first_zero_sum_list([-4, -2, 1, 2, 5, 0])
     [(-4, 2, 2)]
     """
-    return [[(x, y, z) for x in list_of_numbers for y in list_of_numbers for z in list_of_numbers if x + y + z == 0 and x != 0 and y != 0][0]]
+    return [
+        [
+            (x,
+             y,
+             z) for x in list_of_numbers for y in list_of_numbers for z in list_of_numbers if x +
+            y +
+            z == 0 and x != 0 and y != 0][0]]
 
 
 def is_element_repeated(things):
@@ -214,13 +233,13 @@ def range_and_zip(letters):
     Do not use a list comprehension use range and zip
     """
     return zip(range(len(letters)), letters)
-    
+
 
 def list_sum_zip(A, B):
     """
     (Task 0.5.20) Using zip to find elementwise sums
     A one-line comprehension that uses zip together with the variables A and B.
-    The comprehension should evaluate to a list whose ith element is the ith 
+    The comprehension should evaluate to a list whose ith element is the ith
     element of
     A plus the ith element of B.
     >>> list_sum_zip([10,20,30],[1,2,3])
@@ -231,7 +250,7 @@ def list_sum_zip(A, B):
 
 def value_list(k, dlist):
     """
-    (Task 0.5.21) Extracting the value corresponding to key k 
+    (Task 0.5.21) Extracting the value corresponding to key k
     from each dictionary in a list
     >>> value_list('James',[{'James':'Sean', 'director':'Terence'}, {'James':'Roger', 'director':'Lewis'}, {'James':'Pierce', 'director':'Roger'}])
     ['Sean', 'Roger', 'Pierce']
@@ -268,16 +287,16 @@ def square_dict(n):
     >>> square_dict(10)
     {0: 0, 1: 1, 2: 4, 3: 9, 4: 16, 5: 25, 6: 36, 7: 49, 8: 64, 9: 81}
     """
-    i=0
-    cadena=""
+    i = 0
+    cadena = ""
     dicc = {}
-    while i<n:
+    while i < n:
         rep = i * i
         # cadena = i,": ", rep
-        dicc[i]= rep
+        dicc[i] = rep
         i = i + 1
     return dicc
-    
+
 
 def dictionary_mapping(names, id2salaries):
     """

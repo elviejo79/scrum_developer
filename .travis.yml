@@ -16,4 +16,4 @@ install:
 script:
   - python -m compileall ./practicas/
   - flake8 --max-line-length=160
-  - python -m doctest ./practicas/*
+  - python -m doctest ./practicas/python_lab.py
