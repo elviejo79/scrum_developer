@@ -5,8 +5,7 @@
 
 
 def minutes_in_weeks(weeks):
-    """
-    1: (Task 0.5.1) Minutes in a Week
+    """ 1: (Task 0.5.1) Minutes in a Week
     >>> minutes_in_weeks(1)
     10080
 
@@ -16,7 +15,12 @@ def minutes_in_weeks(weeks):
     return weeks * 7 * 24 * 60
 
 
-def remainder_without_mod(numerator, divisor):
+
+
+
+
+
+def remander_without_mod(numerator, divisor):
     """
     2: (Task 0.5.2) Remainder
     >>> remainder_without_mod(28,7)
@@ -27,25 +31,25 @@ def remainder_without_mod(numerator, divisor):
     return numerator - ((numerator // divisor) * divisor)
 
 
-def divisible_by_3(num):
+def divisble_by_3(num):
     """
     3: (Task 0.5.3) Divisibility
     >>> divisible_by_3(9)
     True
-    >>> divisible_by_3(7)
+    >>> divisibre_by_3(7)
     False
     """
-    return bool(num % 3 == 0)
+    return "True" if num % 3 == 0 else "False"
 
 
-def predict_expression(x, y, prediction):
+def predict_expresion(x, y, prediction):
     """
     4: (Task 0.5.4) Conditional Expression
     Try to predict the value of 2**(y+1/2) if x+10<0 else 2**(y-1/2)
     >>> predict_expression(-9, 1/2, 1)
     1
     """
-    return 2**(y + 1 / 2) if x + 10 < 0 else 2**(y - 1 / 2)
+    return 2 ** (y + prediction) if x + 10 < 0 else 2**(y - prediction)
 
 
 def squares_set(numbers):
@@ -67,10 +71,13 @@ def pows_two(numbers):
     6: (Task 0.5.6) Powers-of-2 Set Comprehension
     Given a set of numbers return the powers of two of those numbers
     >>> pows_two({0,1,2,3,4})
-    set([0, 1, 4, 16, 9])
+    set([0, 1, 4, 9, 16])
     """
-    listaAux = [i * i for i in numbers]
-    return set(listaAux)
+    lista = set()
+    for n in numbers:
+        num = n**2
+        lista.add(num)
+    return lista
 
 
 def set_product57(xs, ys):
@@ -92,11 +99,11 @@ def set_product58(xs, ys):
     """
     8: (Task 0.5.8) Double comprehension evaluating to five-element set
     Return a set containing the multiplicacion of every elment in a set
-    multiplied by the other
-    where elements dont repeat
+    multiplied by the other where elements dont repeat
     >>> set_product58({1,2,3},{3,4,5})
-    set([3, 4, 5, 6, 8, 9, 10, 12, 15])
+    set([3, 4, 5, 6, 8, 10, 12, 15])
     """
+
     return {x * y for x in xs for y in ys}
 
 
@@ -147,17 +154,18 @@ def LofL_sum(list_of_lists):
 
     >>> LofL_sum([[.25, .75, .1], [-1, 0], [4, 4, 4, 4]])
     16.1
+
     """
-    return sum([sum(x) for x in list_of_lists])
 
 
 def zero_sum_list(list_of_numbers):
     """
     13: (Task 0.5.14) Three-element tuples summing to zero
     >>> zero_sum_list([-4, -2, 1, 2, 5, 0])
-    [(-4, 2, 2), (-2, 1, 1), (-2, 2, 0), (-2, 0, 2), (1, -2, 1), (1, 1, -2), (2, -4, 2), (2, -2, 0), (2, 2, -4), (2, 0, -2), (0, -2, 2), (0, 2, -2), (0, 0, 0)]
+    [(-4, 2, 2), (-2, 1, 1), (-2, 2, 0), (-2, 0, 2), (1, -2, 1), (1, 1, -2),
+    (2, -4, 2), (2, -2, 0), (2, 2, -4), (2, 0, -2), (0, -2, 2), (0, 2, -2),
+    (0, 0, 0)]
     """
-    return [(i, j, k) for i in list_of_numbers for j in list_of_numbers for k in list_of_numbers if i + j + k == 0]
 
 
 def non_zero_sum_list(list_of_numbers):
@@ -166,9 +174,18 @@ def non_zero_sum_list(list_of_numbers):
     the resulting list does
     not include (0, 0, 0). Hint: add a filter.
     >>> non_zero_sum_list([-4, -2, 1, 2, 5, 0])
-    [(-4, 2, 2), (-2, 1, 1), (-2, 2, 0), (-2, 0, 2), (1, -2, 1), (1, 1, -2), (2, -4, 2), (2, -2, 0), (2, 2, -4), (2, 0, -2), (0, -2, 2), (0, 2, -2)]
+    [(-4, 2, 2), (-2, 1, 1), (-2, 2, 0), (-2, 0, 2), (1, -2, 1), (1, 1, -2),
+    (2, -4, 2), (2, -2, 0), (2, 2, -4), (2, 0, -2), (0, -2, 2), (0, 2, -2)]
     """
-    return [(x, y, z) for x in list_of_numbers for y in list_of_numbers for z in list_of_numbers if x + y + z == 0 and not (x == 0 and y == 0 and z == 0)]
+
+    return [
+        (
+            x,
+            y,
+            z) for x in list_of_numbers for y in list_of_numbers for z in list_of_numbers if x +
+        y +
+        z == 0 and not (
+            x == 0 and y == 0 and z == 0)]
 
 
 def first_zero_sum_list(list_of_numbers):
@@ -177,7 +194,13 @@ def first_zero_sum_list(list_of_numbers):
     >>> first_zero_sum_list([-4, -2, 1, 2, 5, 0])
     [(-4, 2, 2)]
     """
-    return [[(x, y, z) for x in list_of_numbers for y in list_of_numbers for z in list_of_numbers if x + y + z == 0 and x != 0 and y != 0][0]]
+    return [
+        [
+            (x,
+             y,
+             z) for x in list_of_numbers for y in list_of_numbers for z in list_of_numbers if x +
+            y +
+            z == 0 and x != 0 and y != 0][0]]
 
 
 def is_element_repeated(things):
@@ -205,9 +228,9 @@ def odd_num_list(n):
 def range_and_zip(letters):
     """
     (Task 0.5.19) Using range and zip
-    Do not use a list comprehension use range and zip
     >>> range_and_zip("ABCDE")
     [(0, 'A'), (1, 'B'), (2, 'C'), (3, 'D'), (4, 'E')]
+    Do not use a list comprehension use range and zip
     """
     return zip(range(len(letters)), letters)
 
@@ -265,9 +288,11 @@ def square_dict(n):
     {0: 0, 1: 1, 2: 4, 3: 9, 4: 16, 5: 25, 6: 36, 7: 49, 8: 64, 9: 81}
     """
     i = 0
+    cadena = ""
     dicc = {}
     while i < n:
         rep = i * i
+        # cadena = i,": ", rep
         dicc[i] = rep
         i = i + 1
     return dicc
@@ -303,7 +328,7 @@ def cubes(L):
     >>> cubes([1, 2, 3])
     [1, 8, 27]
     """
-    return [x**3 for x in L]
+    return []
 
 
 def dict2list(dct, keylist):
@@ -316,7 +341,7 @@ def dict2list(dct, keylist):
     >>> dict2list({'a':'A', 'b':'B', 'c':'C'},['b','c','a'])
     ['B', 'C', 'A']
     """
-    return [dct[key] for key in keylist]
+    return []
 
 
 def list2dict(L, keylist):
@@ -326,8 +351,8 @@ def list2dict(L, keylist):
       input: list L, list keylist of immutable items
       output: dictionary that maps keylist[i] to L[i]
               for i = 0, 1, 2,..., len(L) % 1
-    >>> list2dict(['A','B','C'],keylist=['a','b','c'])
-    {'a': 'A', 'c': 'C', 'b': 'B'}
+    >>> list2dict([’A’,’B’,’C’],keylist=[’a’,’b’,’c’])
+    {'a':'A', 'b':'B', 'c':'C'}
     """
     empty_dict = {}
     i = 0
