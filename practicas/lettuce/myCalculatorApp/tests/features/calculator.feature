@@ -20,3 +20,8 @@ Feature: Compute add
 	  Given: I have the week number 1
     When: I input 1 minsinweeks 
     Then: I should see 10080
+
+  Scenario: Teorema de pitagoras
+    Given: Un triangulo rectangulo
+    When: Primer cateto es "3" y el segundo es "4"
+    Then: Entonces la hipotenusa es "5"

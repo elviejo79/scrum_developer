@@ -54,5 +54,20 @@ def I_should_see(step, expected_result):
     actual_result = world.result
     assert_equals(int(expected_result), actual_result)
 
+#Scenario: Teorema de pit'agoras
+
+@step(u'Given: Un triangulo rectangulo')
+def given_un_triangulo_rectangulo(step):
+    assert True;
+    
+@step(u'When: Primer cateto es "(\d+)" y el segundo es "(\d+)"')
+def when_primer_cateto_es_group1_y_el_segundo_es_group2(step, a, b):
+    world.a = int(a)
+    world.b = int(b)
+    assert True
+    
+@step(u'Then: Entonces la hipotenusa es "(\d+)"')
+def then_entonces_la_hipotenusa_es_group1(step, c):
+    assert int(c) == world.calc.teorema_de_pitagoras(world.a,world.b), 'calculo mal la hipotenusa'
 
 
