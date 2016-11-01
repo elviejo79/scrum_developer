@@ -8,8 +8,8 @@ def test_minutest_in_weeks():
     assert minutes_in_weeks(2) == 20160
 
 @given(st.integers())
-def test_minutest_in_weeks(mins):
-    assert (minutes_in_weeks(1)%10080) == 0
+def test_minutest_in_weeks2(mins):
+    assert (minutes_in_weeks(mins)%10080) == 1
 
 
 # We restrict the range of values we test against here because if you were to
