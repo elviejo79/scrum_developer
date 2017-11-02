@@ -15,11 +15,6 @@ def minutes_in_weeks(weeks):
     return weeks * 7 * 24 * 60
 
 
-
-
-
-
-
 def remander_without_mod(numerator, divisor):
     """
     2: (Task 0.5.2) Remainder
@@ -288,7 +283,7 @@ def square_dict(n):
     {0: 0, 1: 1, 2: 4, 3: 9, 4: 16, 5: 25, 6: 36, 7: 49, 8: 64, 9: 81}
     """
     i = 0
-    cadena = ""
+    # cadena = ""
     dicc = {}
     while i < n:
         rep = i * i
@@ -328,7 +323,8 @@ def cubes(L):
     >>> cubes([1, 2, 3])
     [1, 8, 27]
     """
-    return list(map(lambda x : x**3,L))
+
+    return list(map(lambda x: x**3, L))
 
 
 def dict2list(dct, keylist):
