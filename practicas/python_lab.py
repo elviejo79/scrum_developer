@@ -328,7 +328,7 @@ def cubes(L):
     >>> cubes([1, 2, 3])
     [1, 8, 27]
     """
-    return []
+    return list(map(lambda x : x**3,L))
 
 
 def dict2list(dct, keylist):
