@@ -156,7 +156,11 @@ def LofL_sum(list_of_lists):
     16.1
 
     """
+    total = 0
+    for list in list_of_lists:
+        total += sum(list)
 
+    return total
 
 def zero_sum_list(list_of_numbers):
     """
@@ -168,7 +172,7 @@ def zero_sum_list(list_of_numbers):
     """
 
 
-def non_zero_sum_list(list_of_numbers):
+def non_zero_sulist(list_of_numbers):
     """
     Task 0.5.15: Modify the comprehension of the previous task so that
     the resulting list does
